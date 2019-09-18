@@ -1,0 +1,70 @@
+{
+  "name": "melisplatform/melis-demo-cms-twig",
+  "description": "A demo Site demonstrating the usage of Twig inside Melis Platform",
+  "type": "melisplatform-module",
+  "license": "OSL-3.0",
+  "homepage": "https://github.com/melisplatform/melis-demo-cms-twig",
+  "support": {
+    "email": "contact@melistechnology.com",
+    "source": "https://github.com/melisplatform/melis-demo-cms-twig",
+    "issues": "https://github.com/melisplatform/melis-demo-cms-twig/issues",
+    "docs": "https://github.com/melisplatform/melis-cms-twig/"
+  },
+  "authors": [
+    {
+      "name": "Melis Technology",
+      "email": "contact@melistechnology.com",
+      "homepage": "https://www.melistechnology.com",
+      "role": "Developer"
+    }
+  ],
+  "keywords": [
+    "cms",
+    "melis",
+    "zf2",
+    "twig",
+    "module"
+  ],
+  "extra": {
+    "module-name": "MelisDemoCmsTwig",
+    "dbdeploy": true,
+    "melis-site": true,
+    "melis-module-category": "cms",
+    "installer-name": "MelisDemoCmsTwig",
+    "installer-paths": {
+      "module/MelisSites/{$name}": [
+        "type:melisplatform-site"
+      ]
+    }
+  },
+  "require": {
+    "php": "^7.0",
+    "composer/installers": "~1.0",
+    "melisplatform/melis-engine": "^3.0",
+    "melisplatform/melis-front": "^3.1.0",
+    "melisplatform/melis-cms": "^3.1.0",
+    "melisplatform/melis-cms-slider": "^3.1.0",
+    "melisplatform/melis-cms-news": "^3.1.0",
+    "melisplatform/melis-cms-twig": "dev-develop"
+  },
+  "suggest": {
+    "melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
+    "melisplatform/melis-front": "MelisFront is the engine that displays website hosted on Melis Platform.",
+    "melisplatform/melis-cms-slider": "MelisCmsSlider provides a full Slider system for Melis Platform, including templating plugins.",
+    "melisplatform/melis-cms-news": "Provides a venue for creating and maintaining news posts inside Melis Platform"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "MelisDemoCmsTwig\\": "src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/melisplatform/melis-cms-twig"
+    }
+  ]
+}
