@@ -10,18 +10,18 @@
 return [
     'router' => [
         'routes' => [
-            'MelisDemoCms-pageids' => [
+            'MelisDemoCmsTwig-pageids' => [
                 'type' => 'regex',
                 'options' => [
-                    'regex' => '.*/MelisDemoCms/.*/id/(?<idpage>[0-9]+)',
+                    'regex' => '.*/MelisDemoCmsTwig/.*/id/(?<idpage>[0-9]+)',
                     'defaults' => [
-                        'controller' => 'MelisDemoCms\Controller\Index',
+                        'controller' => 'MelisDemoCmsTwig\Controller\Index',
                         'action' => 'indexsite',
                     ],
                     'spec' => '%idpage',
                 ],
             ],
-            'MelisDemoCms-homepage' => [
+            'MelisDemoCmsTwig-homepage' => [
                 'type' => 'Literal',
                 'options' => [
                     'route' => '/',
@@ -39,12 +39,12 @@ return [
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'applicationMelisDemoCms' => [
+            'applicationMelisDemoCmsTwig' => [
                 'type' => 'Literal',
                 'options' => [
-                    'route' => 'MelisDemoCms',
+                    'route' => 'MelisDemoCmsTwig',
                     'defaults' => [
-                        '__NAMESPACE__' => 'MelisDemoCms\Controller'
+                        '__NAMESPACE__' => 'MelisDemoCmsTwig\Controller'
                     ],
                 ],
                 'may_terminate' => true,
@@ -67,7 +67,7 @@ return [
                         'options' => [
                             'route' => '/setup',
                             'defaults' => [
-                                'controller' => 'MelisDemoCms\Controller\MelisSetup',
+                                'controller' => 'MelisDemoCmsTwig\Controller\MelisSetup',
                                 'action' => 'setupForm',
                             ],
                         ],
@@ -80,12 +80,12 @@ return [
                     'route' => '/melis[/]',
                 ],
                 'child_routes' => [
-                    'application-MelisDemoCms' => [
+                    'application-MelisDemoCmsTwig' => [
                         'type' => 'Literal',
                         'options' => [
-                            'route' => 'MelisDemoCms',
+                            'route' => 'MelisDemoCmsTwig',
                             'defaults' => [
-                                '__NAMESPACE__' => 'MelisDemoCms\Controller',
+                                '__NAMESPACE__' => 'MelisDemoCmsTwig\Controller',
                             ],
                         ],
                         'may_terminate' => true,
@@ -99,7 +99,7 @@ return [
                                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                     ],
                                     'defaults' => [
-                                        '__NAMESPACE__' => 'MelisDemoCms\Controller',
+                                        '__NAMESPACE__' => 'MelisDemoCmsTwig\Controller',
                                     ],
                                 ],
                             ],
@@ -116,11 +116,11 @@ return [
         ],
         'aliases' => [
             'translator' => 'MvcTranslator',
-            'MelisPlatformTable' => \MelisDemoCms\Model\Tables\MelisPlatformTable::class,
+            'MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\MelisPlatformTable::class,
         ],
         'factories' => [
-            'DemoCmsService' => \MelisDemoCms\Service\Factory\DemoCmsServiceFactory::class,
-            'MelisDemoCms\Model\Tables\MelisPlatformTable' => \MelisDemoCms\Model\Tables\Factory\MelisPlatformTableFactory::class,
+            'DemoCmsService' => \MelisDemoCmsTwig\Service\Factory\DemoCmsServiceFactory::class,
+            'MelisDemoCmsTwig\Model\Tables\MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\Factory\MelisPlatformTableFactory::class,
         ],
     ],
     'translator' => [
@@ -128,23 +128,16 @@ return [
     ],
     'controllers' => [
         'invokables' => [
-            'MelisDemoCms\Controller\Base' => \MelisDemoCms\Controller\BaseController::class,
-            'MelisDemoCms\Controller\Home' => \MelisDemoCms\Controller\HomeController::class,
-            'MelisDemoCms\Controller\News' => \MelisDemoCms\Controller\NewsController::class,
-            'MelisDemoCms\Controller\Content' => \MelisDemoCms\Controller\ContentController::class,
-            'MelisDemoCms\Controller\About' => \MelisDemoCms\Controller\AboutController::class,
-            'MelisDemoCms\Controller\Contact' => \MelisDemoCms\Controller\ContactController::class,
-            'MelisDemoCms\Controller\Testimonial' => \MelisDemoCms\Controller\TestimonialController::class,
-            'MelisDemoCms\Controller\Search' => \MelisDemoCms\Controller\SearchController::class,
-            'MelisDemoCms\Controller\Page404' => \MelisDemoCms\Controller\Page404Controller::class,
-            'MelisDemoCms\Controller\MelisSetupPostDownload'    => \MelisDemoCms\Controller\MelisSetupPostDownloadController::class,
-            'MelisDemoCms\Controller\MelisSetupPostUpdate'    => \MelisDemoCms\Controller\MelisSetupPostUpdateController::class,
+            'MelisDemoCmsTwig\Controller\Base' => \MelisDemoCmsTwig\Controller\BaseController::class,
+            'MelisDemoCmsTwig\Controller\Home' => \MelisDemoCmsTwig\Controller\HomeController::class,
+            'MelisDemoCmsTwig\Controller\MelisSetupPostDownload'    => \MelisDemoCmsTwig\Controller\MelisSetupPostDownloadController::class,
+            'MelisDemoCmsTwig\Controller\MelisSetupPostUpdate'    => \MelisDemoCmsTwig\Controller\MelisSetupPostUpdateController::class,
         ],
     ],
     'view_helpers' => [
         'invokables' => [
-            'DemoSiteFieldCollection' => \MelisDemoCms\Form\View\Helper\DemoSiteFieldCollection::class,
-            'DemoSiteFieldRow' => \MelisDemoCms\Form\View\Helper\DemoSiteFieldRow::class,
+            'DemoSiteFieldCollection' => \MelisDemoCmsTwig\Form\View\Helper\DemoSiteFieldCollection::class,
+            'DemoSiteFieldRow' => \MelisDemoCmsTwig\Form\View\Helper\DemoSiteFieldRow::class,
         ],
     ],
     'view_manager' => [
@@ -154,31 +147,31 @@ return [
         'not_found_template' => 'error/404',
         'exception_template' => 'error/index',
         'controller_map' => [
-            'MelisDemoCms' => true,
+            'MelisDemoCmsTwig' => true,
         ],
         'template_map' => [
             // Zend default layout
             'layout/layout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
             // Main layout
-            'MelisDemoCms/defaultLayout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
-            'MelisDemoCms/setupLayout' => __DIR__ . '/../view/layout/setupLayout.phtml',
+            'MelisDemoCmsTwig/defaultLayout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
+            'MelisDemoCmsTwig/setupLayout' => __DIR__ . '/../view/layout/setupLayout.phtml',
             'layout/errorLayout' => __DIR__ . '/../view/layout/errorLayout.phtml',
             // Errors layout
             'error/404' => __DIR__ . '/../view/error/404.phtml',
             'error/index' => __DIR__ . '/../view/error/index.phtml',
             // Plugins layout
-            'MelisDemoCms/plugin/menu' => __DIR__ . '/../view/plugins/menu.phtml',
-            'MelisDemoCms/plugin/breadcrumb' => __DIR__ . '/../view/plugins/breadcrumb.phtml',
-            'MelisDemoCms/plugin/contactus' => __DIR__ . '/../view/plugins/contactus.phtml',
-            'MelisDemoCms/plugin/homepage-slider' => __DIR__ . '/../view/plugins/homepage-slider.phtml',
-            'MelisDemoCms/plugin/latest-news' => __DIR__ . '/../view/plugins/latest-news.phtml',
-            'MelisDemoCms/plugin/testimonial-slider' => __DIR__ . '/../view/plugins/testimonial-slider.phtml',
-            'MelisDemoCms/plugin/news-list' => __DIR__ . '/../view/plugins/news-list.phtml',
-            'MelisDemoCms/plugin/list-paginator' => __DIR__ . '/../view/plugins/list-paginator.phtml',
-            'MelisDemoCms/plugin/news-details' => __DIR__ . '/../view/plugins/news-details.phtml',
-            'MelisDemoCms/plugin/aboutus-slider' => __DIR__ . '/../view/plugins/aboutus-slider.phtml',
-            'MelisDemoCms/plugin/search-results' => __DIR__ . '/../view/plugins/search-results.phtml',
-            'MelisDemoCms/plugin/gdpr-banner' => __DIR__ . '/../view/plugins/gdpr-banner.phtml',
+            'MelisDemoCmsTwig/plugin/menu' => __DIR__ . '/../view/plugins/menu.phtml',
+            'MelisDemoCmsTwig/plugin/breadcrumb' => __DIR__ . '/../view/plugins/breadcrumb.phtml',
+            'MelisDemoCmsTwig/plugin/contactus' => __DIR__ . '/../view/plugins/contactus.phtml',
+            'MelisDemoCmsTwig/plugin/homepage-slider' => __DIR__ . '/../view/plugins/homepage-slider.phtml',
+            'MelisDemoCmsTwig/plugin/latest-news' => __DIR__ . '/../view/plugins/latest-news.phtml',
+            'MelisDemoCmsTwig/plugin/testimonial-slider' => __DIR__ . '/../view/plugins/testimonial-slider.phtml',
+            'MelisDemoCmsTwig/plugin/news-list' => __DIR__ . '/../view/plugins/news-list.phtml',
+            'MelisDemoCmsTwig/plugin/list-paginator' => __DIR__ . '/../view/plugins/list-paginator.phtml',
+            'MelisDemoCmsTwig/plugin/news-details' => __DIR__ . '/../view/plugins/news-details.phtml',
+            'MelisDemoCmsTwig/plugin/aboutus-slider' => __DIR__ . '/../view/plugins/aboutus-slider.phtml',
+            'MelisDemoCmsTwig/plugin/search-results' => __DIR__ . '/../view/plugins/search-results.phtml',
+            'MelisDemoCmsTwig/plugin/gdpr-banner' => __DIR__ . '/../view/plugins/gdpr-banner.phtml',
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',

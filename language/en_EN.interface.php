@@ -1,6 +1,6 @@
 <?php
 
-namespace MelisDemoCms;
+namespace MelisDemoCmsTwig;
 
 return array(
     'tr_MelisDemoCms_name' => __NAMESPACE__,

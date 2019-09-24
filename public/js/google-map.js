@@ -17,7 +17,7 @@ function initialize() {
     var marker = new google.maps.Marker({
     position: map.getCenter(),
     animation:google.maps.Animation.BOUNCE,
-    icon: '../../../MelisDemoCms/images/icons/map-marker.png',
+    icon: '../../../MelisDemoCmsTwig/images/icons/map-marker.png',
     map: map
     });
 

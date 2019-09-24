@@ -10,7 +10,7 @@
 
         {# All css files are included here. #}
         {# Favicon #}
-        {{ headLink({'rel': 'apple-touch-icon', 'href': basePath('/MelisDemoCms/images/icons/favicon.ico')}, 'PREPEND') }}
+        {{ headLink({'rel': 'apple-touch-icon', 'href': basePath('/MelisDemoCmsTwig/images/icons/favicon.ico')}, 'PREPEND') }}
 
         {# Render Page CSS from Controller Action of the page #}
         {% if pageCss is iterable %}
@@ -23,7 +23,7 @@
         {{ headLink() }}
 
         {# Modernizr JS #}
-        {{ headScript().appendFile(basePath('/MelisDemoCms/js/vendor/modernizr-2.8.3.min.js')) | raw }}
+        {{ headScript().appendFile(basePath('/MelisDemoCmsTwig/js/vendor/modernizr-2.8.3.min.js')) | raw }}
 
         {# Generate JS #}
         {{ headScript() }}
@@ -60,7 +60,7 @@
                             <div class="row">
                                 <div class="col-md-2 col-sm-2">
                                     <div class="logo ptb-20"><a href="/"> 
-                                        <img src="{{ basePath('/MelisDemoCms/images/logo/logo.png') }}" alt="main logo"></a>
+                                        <img src="{{ basePath('/MelisDemoCmsTwig/images/logo/logo.png') }}" alt="main logo"></a>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-sm-10 col-xs-12 m-no-padding">
@@ -165,12 +165,12 @@
                             {{ MelisTag(SiteConfig('homePageId'), 'footer_text_3', editableHtml,
                                 '<div class="instagrm">
                                     <ul>
-                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCms/images/gallery/01.jpg') ~ '" alt=""></a></li>
-                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCms/images/gallery/02.jpg') ~ '" alt=""></a></li>
-                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCms/images/gallery/03.jpg') ~ '" alt=""></a></li>
-                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCms/images/gallery/04.jpg') ~ '" alt=""></a></li>
-                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCms/images/gallery/05.jpg') ~ '" alt=""></a></li>
-                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCms/images/gallery/06.jpg') ~ '" alt=""></a></li>
+                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCmsTwig/images/gallery/01.jpg') ~ '" alt=""></a></li>
+                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCmsTwig/images/gallery/02.jpg') ~ '" alt=""></a></li>
+                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCmsTwig/images/gallery/03.jpg') ~ '" alt=""></a></li>
+                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCmsTwig/images/gallery/04.jpg') ~ '" alt=""></a></li>
+                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCmsTwig/images/gallery/05.jpg') ~ '" alt=""></a></li>
+                                        <li><a href="#"><img src="' ~ basePath('/MelisDemoCmsTwig/images/gallery/06.jpg') ~ '" alt=""></a></li>
                                     </ul>
                                 </div>')
                             }}

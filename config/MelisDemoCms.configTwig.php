@@ -2,7 +2,7 @@
 
 return [
     'site' => [
-        'MelisDemoCms' => [
+        'MelisDemoCmsTwig' => [
             '%site_id%' => array(
                 'en_EN' => array(
                     'homePageId' => '%site_id%',
@@ -27,7 +27,7 @@ return [
                 // No page ids here
                 /**
                  * Required Modules for installation,
-                 * to trigger services that needed to install the MelisDemoCms
+                 * to trigger services that needed to install the MelisDemoCmsTwig
                  * and to avoid deselect from selecting modules during installations.
                  */
                 'required_modules' => [

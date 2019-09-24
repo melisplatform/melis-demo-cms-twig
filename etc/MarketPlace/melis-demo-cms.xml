@@ -1,12 +1,12 @@
 <melis-demo-cms>
 	<package_info>
-		<mp_title>Melis Demo Cms</mp_title>
-		<mp_subtitle>A CMS demo website</mp_subtitle>
+		<mp_title>Melis Demo Cms Twig</mp_title>
+		<mp_subtitle>A demo site demonstrating Twig in Melis Platform</mp_subtitle>
 		<mp_description>
 			<![CDATA[
-				<p>MelisDemoCms is a ready to install website made with the goal of being an example for developers.</p>
-				<p>The site makes use of templating plugins, drag'n'drop, modules sliders, news and prospects.</p>
-				<p>It will present the dos and donts and provide example of implementation.</p>
+				<p>Melis Demo CMS Twig is a ready to install website demonstrating the use of Twig as an alternative templating engine for CMS pages.</p>
+				<p>The site makes use of templating plugins, drag'n'drop, sliders, and more.</p>
+				<p>A great reference for developers and template designers taking advantage of Twig.</p>
 			]]>
 		</mp_description>
 		<mp_maintainers>melisplatform</mp_maintainers>
@@ -14,27 +14,27 @@
 	</package_info>
 	<package_images>
 		<img_1>
-			<mpi_image_title>Melis Demo Cms Home Page</mpi_image_title>
+			<mpi_image_title>Melis Demo Cms Twig Home Page</mpi_image_title>
 			<mpi_image_file>melis_demo_cms-1.JPG</mpi_image_file>
 			<mpi_image_main>1</mpi_image_main>
 		</img_1>
 		<img_2>
-			<mpi_image_title>Melis Demo Cms News Page</mpi_image_title>
+			<mpi_image_title>Melis Demo Cms Twig News Page</mpi_image_title>
 			<mpi_image_file>melis_demo_cms-2.JPG</mpi_image_file>
 			<mpi_image_main>0</mpi_image_main>
 		</img_2>
 		<img_3>
-			<mpi_image_title>Melis Demo Cms About Us Page</mpi_image_title>
+			<mpi_image_title>Melis Demo Cms Twig About Us Page</mpi_image_title>
 			<mpi_image_file>melis_demo_cms-3.JPG</mpi_image_file>
 			<mpi_image_main>0</mpi_image_main>
 		</img_3>
 		<img_4>
-			<mpi_image_title>Melis Demo Cms Contact Us Page</mpi_image_title>
+			<mpi_image_title>Melis Demo Cms Twig Contact Us Page</mpi_image_title>
 			<mpi_image_file>melis_demo_cms-4.JPG</mpi_image_file>
 			<mpi_image_main>0</mpi_image_main>
 		</img_4>
 		<img_5>
-			<mpi_image_title>Melis Demo Cms Site Footer</mpi_image_title>
+			<mpi_image_title>Melis Demo Cms Twig Site Footer</mpi_image_title>
 			<mpi_image_file>melis_demo_cms-5.JPG</mpi_image_file>
 			<mpi_image_main>0</mpi_image_main>
 		</img_5>

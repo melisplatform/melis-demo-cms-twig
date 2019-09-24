@@ -7,9 +7,9 @@
  *
  */
 
-namespace MelisDemoCms\Controller;
+namespace MelisDemoCmsTwig\Controller;
 
-use MelisDemoCms\Controller\BaseController;
+use MelisDemoCmsTwig\Controller\BaseController;
 use Zend\View\Model\JsonModel;
 use Zend\View\Model\ViewModel;
 class HomeController extends BaseController
@@ -21,7 +21,7 @@ class HomeController extends BaseController
 
         /** Generating Homepage header Slider using MelisCmsSliderShowSliderPlugin Plugin */
         $showSliderParameters = array(
-            'template_path' => 'MelisDemoCms/plugin/homepage-slider',
+            'template_path' => 'MelisDemoCmsTwig/plugin/homepage-slider',
             'id' => 'showSliderHomepage',
             'pageId' => $this->idPage,
             'sliderId' => $siteConfigSrv->getSiteConfigByKey('homepage_header_slider', $this->idPage),
@@ -30,7 +30,7 @@ class HomeController extends BaseController
 
         /** Generating Homepage Latest News slider using MelisCmsNewsLatestNewsPlugin Plugin */
         $latestNewsParameters = array(
-            'template_path' => 'MelisDemoCms/plugin/latest-news',
+            'template_path' => 'MelisDemoCmsTwig/plugin/latest-news',
             'pageIdNews'    => $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $this->idPage),
             'filter' => array(
                 'column' => 'cnews_publish_date',
@@ -46,7 +46,7 @@ class HomeController extends BaseController
         $this->view->setVariable('latestNewsParameters', $latestNewsParameters);
 
         $menuParameters = array(
-            'template_path' => 'MelisDemoCms/plugin/testimonial-slider',
+            'template_path' => 'MelisDemoCmsTwig/plugin/testimonial-slider',
             'pageId' => $this->idPage,
             'pageIdFolder' => $siteConfigSrv->getSiteConfigByKey('testimonial_id', $this->idPage),
             'renderMode' => $this->renderMode,
@@ -57,7 +57,7 @@ class HomeController extends BaseController
          * Displaying a GDPR/Cookie banner using MelisGdprBanner plugin
          * @var \MelisFront\Controller\Plugin\MelisFrontGdprBannerPlugin $gdprBannerPlugin
          */
-        $this->view->setVariable('gdprBannerParameters', ['template_path' => 'MelisDemoCms/plugin/gdpr-banner']);
+        $this->view->setVariable('gdprBannerParameters', ['template_path' => 'MelisDemoCmsTwig/plugin/gdpr-banner']);
 
         $this->view->setVariable('idPage', $this->idPage);
         $this->view->setVariable('renderType', $this->renderType);
