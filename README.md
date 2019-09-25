@@ -54,7 +54,7 @@ composer require melisplatform/melis-demo-cms-twig
 
 * **Melis Technology** - [www.melistechnology.com](https://www.melistechnology.com/)
 
-See also the list of [contributors](https://github.com/melisplatform/melis-demo-cms/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/melisplatform/melis-demo-cms-twig/contributors) who participated in this project.
 
 
 ## License

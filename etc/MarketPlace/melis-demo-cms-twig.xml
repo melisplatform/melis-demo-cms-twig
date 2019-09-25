@@ -1,4 +1,4 @@
-<melis-demo-cms>
+<melis-demo-cms-twig>
 	<package_info>
 		<mp_title>Melis Demo Cms Twig</mp_title>
 		<mp_subtitle>A demo site demonstrating Twig in Melis Platform</mp_subtitle>
@@ -39,4 +39,4 @@
 			<mpi_image_main>0</mpi_image_main>
 		</img_5>
 	</package_images>
-</melis-demo-cms>
+</melis-demo-cms-twig>
