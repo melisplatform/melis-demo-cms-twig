@@ -5,33 +5,33 @@ return [
             'plugins' => [
                 'MelisFrontMenuPlugin' => [
                     'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/menu'],
+                        'template_path' => ['MelisDemoCmsTwig/plugin/menu'],
                     ],
                 ],
                 'MelisFrontBreadcrumbPlugin' => [
                     'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/breadcrumb'],
+                        'template_path' => ['MelisDemoCmsTwig/plugin/breadcrumb'],
                     ],
                 ],
                 'MelisFrontShowListFromFolderPlugin' => [
                     'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/testimonial-slider'],
+                        'template_path' => ['MelisDemoCmsTwig/plugin/testimonial-slider'],
                         'files' => [
                             'js' => [
-                                '/MelisDemoCms/js/MelisPlugins/MelisDemoCms.MelisFrontShowListFromFolderPlugin.init.js',
+                                '/MelisDemoCmsTwig/js/MelisPlugins/MelisDemoCmsTwig.MelisFrontShowListFromFolderPlugin.init.js',
                             ],
                         ],
                     ],
                 ],
                 'MelisFrontSearchResultsPlugin' => [
                     'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/search-results'],
+                        'template_path' => ['MelisDemoCmsTwig/plugin/search-results'],
                     ],
                 ],
 
                 'MelisFrontGdprBannerPlugin' => [
                     'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/gdpr-banner'],
+                        'template_path' => ['MelisDemoCmsTwig/plugin/gdpr-banner'],
                     ],
                 ],
             ],
@@ -40,20 +40,20 @@ return [
             'plugins' => [
                 'MelisCmsNewsListNewsPlugin' => [
                     'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/news-list'],
+                        'template_path' => ['MelisDemoCmsTwig/plugin/news-list'],
                     ],
                 ],
                 'MelisCmsNewsShowNewsPlugin' => [
                     'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/news-details'],
+                        'template_path' => ['MelisDemoCmsTwig/plugin/news-details'],
                     ],
                 ],
                 'MelisCmsNewsLatestNewsPlugin' => [
                     'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/latest-news'],
+                        'template_path' => ['MelisDemoCmsTwig/plugin/latest-news'],
                         'files' => [
                             'js' => [
-                                '/MelisDemoCms/js/MelisPlugins/MelisDemoCms.MelisCmsNewsLatestNewsPlugin.init.js',
+                                '/MelisDemoCmsTwig/js/MelisPlugins/MelisDemoCmsTwig.MelisCmsNewsLatestNewsPlugin.init.js',
                             ],
                         ],
                     ],
@@ -65,12 +65,12 @@ return [
                 'MelisCmsSliderShowSliderPlugin' => [
                     'front' => [
                         'template_path' => [
-                            'MelisDemoCms/plugin/homepage-slider',
-                            'MelisDemoCms/plugin/aboutus-slider',
+                            'MelisDemoCmsTwig/plugin/homepage-slider',
+                            'MelisDemoCmsTwig/plugin/aboutus-slider',
                         ],
                         'files' => [
                             'js' => [
-                                '/MelisDemoCms/js/MelisPlugins/MelisDemoCms.MelisCmsSliderShowSliderPlugin.init.js',
+                                '/MelisDemoCmsTwig/js/MelisPlugins/MelisDemoCmsTwig.MelisCmsSliderShowSliderPlugin.init.js',
                             ],
                         ],
                     ],
@@ -81,7 +81,7 @@ return [
             'plugins' => [
                 'MelisCmsProspectsShowFormPlugin' => [
                     'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/contactus'],
+                        'template_path' => ['MelisDemoCmsTwig/plugin/contactus'],
                     ],
                 ],
             ],

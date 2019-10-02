@@ -1,6 +1,6 @@
 <?php
 
-namespace MelisDemoCms;
+namespace MelisDemoCmsTwig;
 
 use MelisMarketPlace\Support\MelisMarketPlaceSiteInstall as Site;
 use MelisMarketPlace\Support\MelisMarketPlaceCmsTables as Melis;
