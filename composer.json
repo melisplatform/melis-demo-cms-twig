@@ -45,7 +45,7 @@
     "melisplatform/melis-cms": "^3.1.0",
     "melisplatform/melis-cms-slider": "^3.1.0",
     "melisplatform/melis-cms-news": "^3.1.0",
-    "melisplatform/melis-cms-twig": "dev-develop"
+    "melisplatform/melis-cms-twig": "^3.1.0"
   },
   "suggest": {
     "melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
@@ -60,11 +60,5 @@
     "psr-4": {
       "MelisDemoCmsTwig\\": "src/"
     }
-  },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/melisplatform/melis-cms-twig"
-    }
-  ]
+  }
 }
