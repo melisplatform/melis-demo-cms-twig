@@ -15,10 +15,10 @@ return [
                     Melis::CMS_TOTAL_PAGE => 10,
                 ],
                 MarketPlace::FORM => [
-                    'melis_demo_cms_setup_download_form' => [
+                    'melis_demo_cms_twig_setup_download_form' => [
                         'attributes' => [
-                            'name' => 'melis_demo_cms_setup_download_form',
-                            'id' => 'melis_demo_cms_setup_download_form',
+                            'name' => 'melis_demo_cms_twig_setup_download_form',
+                            'id' => 'melis_demo_cms_twig_setup_download_form',
                             'method' => 'POST',
                             'action' => '',
                         ],
