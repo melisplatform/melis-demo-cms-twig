@@ -91,7 +91,7 @@ class Module
             include __DIR__ . '/../config/setup/download.config.php',
             include __DIR__ . '/../config/setup/update.config.php',
             include __DIR__ . '/../config/melis.plugins.config.php',
-            include __DIR__ . '/../config/MelisDemoCms.configTwig.php',
+            include __DIR__ . '/../config/MelisDemoCmsTwig.config',
         ];
 
         foreach ($configFiles as $file) {
