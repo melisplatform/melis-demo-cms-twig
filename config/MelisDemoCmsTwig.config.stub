@@ -5,6 +5,7 @@ return [
         'MelisDemoCmsTwig' => [
             '%site_id%' => array(
                 'en_EN' => array(
+                    //homepage id
                     'homePageId' => '%site_id%',
                     // Submenu limit
                     'sub_menu_limit' => null,
@@ -15,9 +16,9 @@ return [
                     // Testimonial parent id
                     'testimonial_id' => '%testimonial%',
                     // Homepage header slider
-                    'homepage_header_slider' => '%homepage_slider_id%',
+                    'homepage_header_slider' => 1,
                     // Aboutus slider
-                    'aboutus_slider' => '%about_us_slider%',
+                    'aboutus_slider' => 2,
                     // Search results page
                     'search_result_page_id' => '%search_results_page_id%',
                 ),
@@ -27,12 +28,13 @@ return [
                 // No page ids here
                 /**
                  * Required Modules for installation,
-                 * to trigger services that needed to install the MelisDemoCmsTwig
+                 * to trigger services that needed to install the MelisDemoCms
                  * and to avoid deselect from selecting modules during installations.
                  */
                 'required_modules' => [
-                    'MelisCmsNews',
-                    'MelisCmsSlider',
+                    // 'MelisCmsNews',
+                    // 'MelisCmsSlider',
+                    // 'MelisCmsProspects',
                 ],
             ),
         ],
