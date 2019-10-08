@@ -133,7 +133,6 @@ return [
             'MelisDemoCmsTwig\Controller\Base' => 'MelisDemoCmsTwig\Controller\BaseController',
             'MelisDemoCmsTwig\Controller\Home' => 'MelisDemoCmsTwig\Controller\HomeController',
             'MelisDemoCmsTwig\Controller\MelisSetupPostDownload' => 'MelisDemoCmsTwig\Controller\MelisSetupPostDownloadController',
-            'MelisDemoCmsTwig\Controller\MelisSetupPostUpdate' => 'MelisDemoCmsTwig\Controller\MelisSetupPostUpdateController',
         ],
     ],
     'view_helpers' => [
@@ -155,8 +154,7 @@ return [
             // Zend default layout
             'layout/layout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
             // Main layout
-            'MelisDemoCmsTwig/defaultLayout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
-            'MelisDemoCmsTwig/setupLayout' => __DIR__ . '/../view/layout/setupLayout.phtml',
+            'MelisDemoCmsTwig/defaultTwigLayout' => __DIR__ . '/../view/layout/defaultTwigLayout.twig',
             'layout/errorLayout' => __DIR__ . '/../view/layout/errorLayout.phtml',
             // Errors layout
             'error/404' => __DIR__ . '/../view/error/404.phtml',
