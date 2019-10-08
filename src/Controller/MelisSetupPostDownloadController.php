@@ -45,7 +45,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
         }
 
         $view = new ViewModel();
-        $view->setVariable('siteDemoCmsTwigForm', $form);
+        $view->setVariable('siteDemoCmsForm', $form);
 
         $view->setTerminal(true);
 
@@ -105,7 +105,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
             'success' => $success,
             'message' => $this->getTool()->getTranslation($message),
             'errors' => $errors,
-            'siteDemoCmsTwigForm' => 'melis_installer_demo_cms_twig',
+            'siteDemoCmsForm' => 'melis_installer_demo_cms_twig',
             'domainForm' => 'melis_installer_domain',
         ];
 
