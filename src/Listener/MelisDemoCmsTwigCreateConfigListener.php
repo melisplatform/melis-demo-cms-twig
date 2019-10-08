@@ -76,7 +76,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
 
                         $sm = $e->getTarget()->getServiceLocator();
                         $moduleService = $sm->get('MelisAssetManagerModulesService');
-                        $path = $moduleService->getModulePath('MelisDemoCms');
+                        $path = $moduleService->getModulePath('MelisDemoCmsTwig');
 
                         $melisDemoConfig = file_get_contents($path . '/config/MelisDemoCmsTwig.config.stub');
 
