@@ -16,12 +16,12 @@
 		<img_1>
 			<mpi_image_title>Melis Demo Cms Twig Home Page</mpi_image_title>
 			<mpi_image_file>melis_demo_cms_twig-1.JPG</mpi_image_file>
-			<mpi_image_main>1</mpi_image_main>
+			<mpi_image_main>0</mpi_image_main>
 		</img_1>
 		<img_2>
 			<mpi_image_title>Melis + Twig</mpi_image_title>
 			<mpi_image_file>melis_demo_cms_twig-2.JPG</mpi_image_file>
-			<mpi_image_main>0</mpi_image_main>
+			<mpi_image_main>1</mpi_image_main>
 		</img_2>
 	</package_images>
 </melis-demo-cms-twig>
