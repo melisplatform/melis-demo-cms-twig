@@ -6,5 +6,6 @@ return [
     'MelisFront',
     'MelisCmsNews',
     'MelisCmsSlider',
+    'MelisCmsTwig',
     'MelisDemoCmsTwig',
 ];

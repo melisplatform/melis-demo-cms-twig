@@ -3,7 +3,7 @@
 /**
  * Melis Technology (http://www.melistechnology.com)
  *
- * @copyright Copyright (c) 2015 Melis Technology (http://www.melistechnology.com)
+ * @copyright Copyright (c) 2019 Melis Technology (http://www.melistechnology.com)
  *
  */
 
@@ -12,6 +12,7 @@ namespace MelisDemoCmsTwig\Controller;
 use MelisDemoCmsTwig\Controller\BaseController;
 use Zend\View\Model\JsonModel;
 use Zend\View\Model\ViewModel;
+
 class HomeController extends BaseController
 {
     public function indexAction()
@@ -26,12 +27,13 @@ class HomeController extends BaseController
             'pageId' => $this->idPage,
             'sliderId' => $siteConfigSrv->getSiteConfigByKey('homepage_header_slider', $this->idPage),
         );
+
         $this->view->setVariable('homePageSliderParameters', $showSliderParameters);
 
         /** Generating Homepage Latest News slider using MelisCmsNewsLatestNewsPlugin Plugin */
         $latestNewsParameters = array(
             'template_path' => 'MelisDemoCmsTwig/plugin/latest-news',
-            'pageIdNews'    => $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $this->idPage),
+            'pageIdNews' => $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $this->idPage),
             'filter' => array(
                 'column' => 'cnews_publish_date',
                 'order' => 'DESC',
