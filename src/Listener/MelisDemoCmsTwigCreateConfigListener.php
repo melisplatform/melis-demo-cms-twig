@@ -41,15 +41,15 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                 $melisDemoConfig = str_replace(
                     [
                         '\'%site_id%\'',
-//                    '\'%news_page_id%\'',
-//                    '\'%news_details_id%\'',
+                        '\'%news_page_id%\'',
+                        '\'%news_details_id%\'',
 //                    '\'%testimonial%\'',
 //                    '\'%search_results_page_id%\''
                     ],
                     [
                         $siteId,
-//                    $pages['News'],
-//                    $pages['News Details'],
+                        $pages['News'],
+                        $pages['News Details'],
 //                    $pages['Testimonials'],
 //                    $pages['Search results']
                     ],
