@@ -43,15 +43,15 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                         '\'%site_id%\'',
                         '\'%news_page_id%\'',
                         '\'%news_details_id%\'',
-//                    '\'%testimonial%\'',
-//                    '\'%search_results_page_id%\''
+                        '\'%testimonial%\'',
+                        '\'%search_results_page_id%\''
                     ],
                     [
                         $siteId,
                         $pages['News'],
                         $pages['News Details'],
-//                    $pages['Testimonials'],
-//                    $pages['Search results']
+                        $pages['Testimonials'],
+                        $pages['Search results']
                     ],
                     $melisDemoConfig
                 );
