@@ -60,7 +60,7 @@ class SiteMenuCustomizationListener implements ListenerAggregateInterface
                     }
 
                     // Customize Site menu using MelisDemoCmsService
-                    $melisDemoCmsSrv = $this->serviceLocator->get('DemoCmsService');
+                    $melisDemoCmsSrv = $this->serviceLocator->get('DemoCmsTwigService');
                     $params['view']->menu = $melisDemoCmsSrv->customizeSiteMenu($sitePages, 1, $limit, $newsMenuPageId);
                 }
             },
