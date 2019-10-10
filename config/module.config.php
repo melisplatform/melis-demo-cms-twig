@@ -111,18 +111,18 @@ return [
     ],
     'service_manager' => [
         'abstract_factories' => [
-            'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
-            'Zend\Log\LoggerAbstractServiceFactory',
+            \Zend\Cache\Service\StorageCacheAbstractServiceFactory::class,
+            \Zend\Log\LoggerAbstractServiceFactory::class,
         ],
         'aliases' => [
             'translator' => 'MvcTranslator',
-            'MelisPlatformTable' => 'MelisDemoCmsTwig\Model\Tables\MelisPlatformTable',
+            'MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\MelisPlatformTable::class,
         ],
         'factories' => [
-            'DemoCmsTwigService' => 'MelisDemoCmsTwig\Service\Factory\DemoCmsTwigServiceFactory',
-            'SetupDemoCmsTwigService' => 'MelisDemoCmsTwig\Service\Factory\SetupDemoCmsTwigServiceFactory',
+            'DemoCmsTwigService' => \MelisDemoCmsTwig\Service\Factory\DemoCmsTwigServiceFactory::class,
+            'SetupDemoCmsTwigService' => MelisDemoCmsTwig\Service\Factory\SetupDemoCmsTwigServiceFactory::class,
 
-            'MelisDemoCmsTwig\Model\Tables\MelisPlatformTable' => 'MelisDemoCmsTwig\Model\Tables\Factory\MelisPlatformTableFactory',
+            'MelisDemoCmsTwig\Model\Tables\MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\Factory\MelisPlatformTableFactory::class,
         ],
     ],
     'translator' => [
@@ -130,15 +130,15 @@ return [
     ],
     'controllers' => [
         'invokables' => [
-            'MelisDemoCmsTwig\Controller\Base' => 'MelisDemoCmsTwig\Controller\BaseController',
-            'MelisDemoCmsTwig\Controller\Home' => 'MelisDemoCmsTwig\Controller\HomeController',
-            'MelisDemoCmsTwig\Controller\MelisSetupPostDownload' => 'MelisDemoCmsTwig\Controller\MelisSetupPostDownloadController',
+            'MelisDemoCmsTwig\Controller\Base' => \MelisDemoCmsTwig\Controller\BaseController::class,
+            'MelisDemoCmsTwig\Controller\Home' => \MelisDemoCmsTwig\Controller\HomeController::class,
+            'MelisDemoCmsTwig\Controller\MelisSetupPostDownload' => \MelisDemoCmsTwig\Controller\MelisSetupPostDownloadController::class,
         ],
     ],
     'view_helpers' => [
         'invokables' => [
-            'DemoSiteFieldCollection' => 'MelisDemoCmsTwig\Form\View\Helper\DemoSiteFieldCollection',
-            'DemoSiteFieldRow' => 'MelisDemoCmsTwig\Form\View\Helper\DemoSiteFieldRow',
+            'DemoSiteFieldCollection' => \MelisDemoCmsTwig\Form\View\Helper\DemoSiteFieldCollection::class,
+            'DemoSiteFieldRow' => \MelisDemoCmsTwig\Form\View\Helper\DemoSiteFieldRow::class,
         ],
     ],
     'view_manager' => [

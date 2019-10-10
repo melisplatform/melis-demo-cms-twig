@@ -224,6 +224,19 @@ return [
                             'tpl_creation_date' => date('Y-m-d H:i:s'),
                             Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
                         ],
+                        [
+                            Melis::PRIMARY_KEY => 'tpl_id',
+                            'tpl_id' => Melis::CURRENT_TEMPLATE_ID,
+                            'tpl_site_id' => Melis::CMS_SITE_ID,
+                            'tpl_name' => 'Search',
+                            'tpl_type' => 'ZF2',
+                            'tpl_zf2_website_folder' => __NAMESPACE__,
+                            'tpl_zf2_layout' => 'defaultLayout',
+                            'tpl_zf2_controller' => 'Search',
+                            'tpl_zf2_action' => 'results',
+                            'tpl_creation_date' => date('Y-m-d H:i:s'),
+                            Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
+                        ],
                     ],
                     // </editor-fold>
 
