@@ -3,8 +3,9 @@
 return [
     'site' => [
         'MelisDemoCmsTwig' => [
-            '%site_id%' => array(
-                'en_EN' => array(
+            '%site_id%' => [
+                'en_EN' => [
+                    //homepage id
                     'homePageId' => '%site_id%',
                     // Submenu limit
                     'sub_menu_limit' => null,
@@ -20,22 +21,22 @@ return [
                     'aboutus_slider' => '%about_us_slider%',
                     // Search results page
                     'search_result_page_id' => '%search_results_page_id%',
-                ),
-            ),
-            'allSites' => array(
+                ],
+            ],
+            'allSites' => [
                 // General cross site config
                 // No page ids here
                 /**
                  * Required Modules for installation,
-                 * to trigger services that needed to install the MelisDemoCmsTwig
+                 * to trigger services that needed to install the Melis Demo CMS Twig
                  * and to avoid deselect from selecting modules during installations.
                  */
                 'required_modules' => [
                     'MelisCmsNews',
                     'MelisCmsSlider',
-                    // 'MelisCmsProspects',
+                    'MelisCmsTwig',
                 ],
-            ),
+            ],
         ],
     ],
 ];

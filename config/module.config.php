@@ -132,6 +132,7 @@ return [
         'invokables' => [
             'MelisDemoCmsTwig\Controller\Base' => \MelisDemoCmsTwig\Controller\BaseController::class,
             'MelisDemoCmsTwig\Controller\Home' => \MelisDemoCmsTwig\Controller\HomeController::class,
+            'MelisDemoCmsTwig\Controller\News' => \MelisDemoCmsTwig\Controller\NewsController::class,
             'MelisDemoCmsTwig\Controller\MelisSetupPostDownload' => \MelisDemoCmsTwig\Controller\MelisSetupPostDownloadController::class,
         ],
     ],
@@ -152,8 +153,9 @@ return [
         ],
         'template_map' => [
             // Zend default layout
-            'layout/layout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
+            'layout/layout' => __DIR__ . '/../view/layout/defaultTwigLayout.twig',
             // Main layout
+            'MelisDemoCmsTwig/defaultLayout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
             'MelisDemoCmsTwig/defaultTwigLayout' => __DIR__ . '/../view/layout/defaultTwigLayout.twig',
             'layout/errorLayout' => __DIR__ . '/../view/layout/errorLayout.phtml',
             // Errors layout
