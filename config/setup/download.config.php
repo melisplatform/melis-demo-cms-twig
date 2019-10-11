@@ -205,7 +205,7 @@ return [
                             'tpl_name' => 'News Details',
                             'tpl_type' => 'TWG',
                             'tpl_zf2_website_folder' => __NAMESPACE__,
-                            'tpl_zf2_layout' => 'defaultLayout',
+                            'tpl_zf2_layout' => 'defaultTwigLayout',
                             'tpl_zf2_controller' => 'News',
                             'tpl_zf2_action' => 'details',
                             'tpl_creation_date' => date('Y-m-d H:i:s'),
