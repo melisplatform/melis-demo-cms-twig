@@ -3,7 +3,7 @@
 /**
  * Melis Technology (http://www.melistechnology.com)
  *
- * @copyright Copyright (c) 201 Melis Technology (http://www.melistechnology.com)
+ * @copyright Copyright (c) 2019 Melis Technology (http://www.melistechnology.com)
  *
  */
 
@@ -18,14 +18,8 @@ class NewsController extends BaseController
      */
     public function listAction()
     {
-        /**
-         * get the service config
-         */
+        /** Listing News using MelisCmsNewsListNewsPlugin */
         $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
-        /**
-         * Listing News using MelisCmsNewsListNewsPlugin
-         */
-        $listNewsPluginView = $this->MelisCmsNewsListNewsPlugin();
         $listNewsParameters = [
             'template_path' => 'MelisDemoCmsTwig/plugin/news-list',
             'pageId' => $this->idPage,
@@ -41,9 +35,7 @@ class NewsController extends BaseController
             ],
         ];
 
-        // add generated view to children views for displaying it in the contact view
-        $this->view->addChild($listNewsPluginView->render($listNewsParameters), 'listNews');
-
+        $this->view->setVariable('listNewsParameters', $listNewsParameters);
         $this->view->setVariable('renderMode', $this->renderMode);
         $this->view->setVariable('idPage', $this->idPage);
 
@@ -51,30 +43,19 @@ class NewsController extends BaseController
     }
 
     /**
-     * This methos will render the Details of a single News
+     * This method will render the Details of a single News
      *
      * @return \Zend\View\Model\ViewModel
      */
     public function detailsAction()
     {
-        /**
-         * get the service config
-         */
         $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
 
-        $dateMax = date("Y-m-d H:i:s", strtotime("now"));
-        $listNewsPluginView = $this->MelisCmsNewsShowNewsPlugin();
-        $listNewsParameters = [
+        $newsDetails = [
             'id' => 'newsDetails',
             'template_path' => 'MelisDemoCmsTwig/plugin/news-details',
         ];
-        // add generated view to children views for displaying it in the contact view
-        $this->view->addChild($listNewsPluginView->render($listNewsParameters), 'newsDetails');
 
-        /**
-         * Generating Homepage Latest News slider using MelisCmsNewsLatestNewsPlugin Plugin
-         */
-        $latestNewsPluginView = $this->MelisCmsNewsLatestNewsPlugin();
         $latestNewsParameters = [
             'template_path' => 'MelisDemoCmsTwig/plugin/latest-news',
             'pageIdNews' => $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $this->idPage),
@@ -87,9 +68,9 @@ class NewsController extends BaseController
                 'site_id' => $siteConfigSrv->getSiteConfigByKey('site_id', $this->idPage),
             ],
         ];
-        // add generated view to children views for displaying it in the contact view
-        $this->view->addChild($latestNewsPluginView->render($latestNewsParameters), 'latestNews');
 
+        $this->view->setVariable('newsDetails', $newsDetails);
+        $this->view->setVariable('latestNews', $latestNewsParameters);
         $this->view->setVariable('renderMode', $this->renderMode);
         $this->view->setVariable('idPage', $this->idPage);
 

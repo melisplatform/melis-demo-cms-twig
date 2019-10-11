@@ -1,0 +1,60 @@
+{% extends baseTemplate %}
+
+{% block content %}
+    <div class="news-details-page">
+        {# breadcumb area start #}
+        {% set subject = MelisTag(idPage, 'header_image', 'media', '') %}
+        {% set pregMatches = pregMatch('/<img\\s.*?\\bsrc="(.*?)".*?>/si', subject, {}) %}
+        {% set imgSrc = '/MelisDemoCmsTwig/images/bg/news.jpg' %}
+
+        {% if pregMatches[1] is not empty %}
+            {% set imgSrc = pregMatches[1] %}
+        {% endif %}
+        {% set imgBg = 'background: rgba(0, 0, 0, 0) url(' ~ imgSrc ~ ') no-repeat scroll 0 0' %}
+
+        <div class="breadcumb-area overlay pos-rltv" style="{{ imgBg }}">
+            {% if renderMode == 'melis' %}
+                <div class="breadcumb-area-overlay-media">
+                    {{ MelisTag(idPage, 'header_image', 'media', '<img alt="" src="' ~ imgSrc ~ '">') }}
+                </div>
+            {% endif %}
+            <div class="bread-main">
+                <div class="bred-hading text-center">
+                    <h5>{{ MelisTag(idPage, 'header_title', 'textarea', 'News') }}</h5>
+                </div>
+                {{ layout().pageBreadcrumb }}
+            </div>
+        </div>
+        {# breadcumb area end #}
+
+        {# single blog main area are start #}
+        <div class="shop-main-area pt-70 pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ MelisDragDropZone(idPage, "dragdropzone_news_details") }}
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="single-blog-body">
+                            <div class="single-blog sb-2 mb-30">
+                                <div class="blog-content">
+                                    {# News Details #}
+                                    {{ MelisCmsNewsShowNewsPlugin(newsDetails) }}
+                                    {# End of News Details #}
+
+                                    <div class="related-post mt-30">
+                                        <h5 class="uppercase sb-title">{{ MelisTag(idPage, 'latest_news_title', 'textarea', 'Latest news') }}</h5>
+                                        {# Latest News #}
+                                        {{ MelisCmsNewsLatestPlugin(latestNews) }}
+                                        {# End of Latest News #}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# single blog main area are end #}
+    </div>
+{% endblock %}
