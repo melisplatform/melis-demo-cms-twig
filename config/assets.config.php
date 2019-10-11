@@ -1,8 +1,8 @@
 <?php 
 
-return array(
-    'css' => array(
-        '/melis-demo-cms-twig-twig/public/css/bootstrap.min.css',
+return [
+    'css' => [
+        '/melis-demo-cms-twig/public/css/bootstrap.min.css',
         '/melis-demo-cms-twig/public/css/core.css',
         '/melis-demo-cms-twig/public/css/shortcode/shortcodes.css',
         '/melis-demo-cms-twig/public/css/owl.carousel.css',
@@ -13,13 +13,13 @@ return array(
         '/melis-demo-cms-twig/public/css/animate.css',
         '/melis-demo-cms-twig/public/css/custom.css',
         '/melis-demo-cms-twig/public/css/skin/skin-default.css',
-    ),
-    'js' => array(
+    ],
+    'js' => [
         '/melis-demo-cms-twig/public/js/vendor/jquery-2.2.4.min.js',
         '/melis-demo-cms-twig/public/js/bootstrap.min.js',
         '/melis-demo-cms-twig/public/js/owl.carousel.js',
         '/melis-demo-cms-twig/public/js/jquery.countdown.min.js',
         '/melis-demo-cms-twig/public/js/plugins.js',
         '/melis-demo-cms-twig/public/js/main.js',
-    )
-);
+    ]
+];
