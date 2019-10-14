@@ -259,7 +259,7 @@ return [
                                         'page_menu' => 'LINK',
                                         'page_name' => 'Melis Demo CMS Twig',
                                         'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Home']],
-                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="contactform_001"><![CDATA[Your name *]]></melisTag>   <melisTag id="contactform_002"><![CDATA[Your email address *]]></melisTag>  <melisTag id="contactform_003"><![CDATA[Subject]]></melisTag>   <melisTag id="contactform_004"><![CDATA[Message *]]></melisTag> <melisTag id="contacttext_001"><![CDATA[Get in <strong>touch</strong>]]></melisTag> <melisTag id="contacttext_002"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.]]></melisTag> <melisTag id="contacttext_003"><![CDATA[The <strong>Office</strong>]]></melisTag>   <melisTag id="contacttext_004"><![CDATA[<ul class="list-unstyled">              <li><i class="icon icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>              <li><i class="icon icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>             <li><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>          </ul>]]></melisTag> <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul><li><div class="contact-icon"><i class="zmdi zmdi-pin-drop"></i></div><div class="contact-text"><p><span>4, rue du Dahomey<br />75011 Paris, France</span><span><br /></span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-email-open"></i></div><div class="contact-text"><p><span>contact@melistechnology.com</span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-phone-paused"></i></div><div class="contact-text"><p><span>(+33) 972 386 280</span><span><br /></span></p></div></li></ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[menu]]></melisTag>   <melisTag id="footer_text_2"><![CDATA[<ul><li><a href="/">Home</a></li><li><a href="/home/news/id/2">News</a></li><li><a href="/home/our-designs/id/4">Our designs</a></li><li><a href="/home/about-us/id/29">About us</a></li><li><a href="/home/contact-us/id/30">Contact us</a></li></ul>]]></melisTag>  <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="homepage_line_1"><![CDATA[<div class="delivery-service-area ptb-30"><div class="container"><div class="row"><div class="col-md-3 col-sm-6 col-xs-12"><div class="single-service shadow-box text-center"><img src="/MelisDemoCmsTwig/images/icons/live.png" caption="false" data-mce-src="/MelisDemoCmsTwig/images/icons/live.png"><h5>Fashion show live</h5></div></div><div class="col-md-3 col-sm-6 col-xs-12"><div class="single-service shadow-box text-center"><img src="/MelisDemoCmsTwig/images/icons/chat.png" caption="false" data-mce-src="/MelisDemoCmsTwig/images/icons/chat.png"><h5>Chat with a star !</h5></div></div><div class="col-md-3 col-sm-6 col-xs-12"><div class="single-service shadow-box text-center"><img src="/MelisDemoCmsTwig/images/icons/news.png" caption="false" data-mce-src="/MelisDemoCmsTwig/images/icons/news.png"><h5>Last minute news</h5></div></div><div class="col-md-3 col-sm-6 col-xs-12"><div class="single-service shadow-box text-center"><img src="/MelisDemoCmsTwig/images/icons/trending.png" caption="false" data-mce-src="/MelisDemoCmsTwig/images/icons/trending.png"><h5>Ultimate trending</h5></div></div></div></div></div>]]></melisTag>  <melisTag id="homepage_line_2"><![CDATA[<div class="blog-area pb-70"><div class="container"><div class="row"><div class="col-md-12 col-sm-8 col-xs-12"><div class="single-blog-body"><div class="single-blog sb-2 mb-30"><div class="blog-content"><div class="blog-title"><h5 class="uppercase font-bold"><a href="/melis-demo-cms/our-designs/id/4" data-mce-href="/melis-demo-cms/our-designs/id/4">The ultimate trend of 2017<br></a><br data-mce-bogus="1"></h5><div class="blog-text"><p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, or random ised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum. <br><br>generators on the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available</p></div></div><div class="blockqot mtb-30"><blockquote><p>There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majorit. There are many variations of passages of Lorem Ipsum available, but the majorit.</p></blockquote></div></div></div></div></div></div></div></div>]]></melisTag>  <melisTag id="homepage_news_title"><![CDATA[News]]></melisTag>  <melisTag id="homepage_testimonial_title"><![CDATA[Testimonial]]></melisTag>    <melisTag id="footer_text_3"><![CDATA[<div class="instagrm"><ul><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/01.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/02.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/03.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/04.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/05.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/06.jpg" alt="" /></a></li></ul></div>]]></melisTag> <melisTag id="footer_title_4"><![CDATA[Social Network]]></melisTag> <melisTag id="homepage_line_3"><![CDATA[<h5 class="uppercase font-bold"><a href="#" data-mce-href="#">Fashion show OBscuria in PARIS this spring 2017 !</a><br data-mce-bogus="1"></h5><div class="blog-text"><p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, or random ised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum. <br><br>generators on the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available</p></div>]]></melisTag>    <melisTag id="homepage_line_4"><![CDATA[<h5 class="uppercase font-bold"><a href="/home/our-designs/suits/suit-3/id/14" data-mce-href="/home/our-designs/suits/suit-3/id/14">The flagship product of 2016</a><br data-mce-bogus="1"></h5><div class="blog-text"><p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, or random ised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum. <br><br>generators on the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available</p></div>]]></melisTag>   <melisTag id="homepage_line_3_img"><![CDATA[<img class="img-responsive" src="/MelisDemoCmsTwig/images/news/N01.jpg"/>]]></melisTag> <melisTag id="homepage_line_4_img"><![CDATA[<img class="img-responsive" src="/MelisDemoCmsTwig/images/product/shoes/03/03.jpg" caption="false" data-mce-src="/MelisDemoCmsTwig/images/product/shoes/03/03.jpg">]]></melisTag></document>',
+                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="contactform_001"><![CDATA[Your name *]]></melisTag>   <melisTag id="contactform_002"><![CDATA[Your email address *]]></melisTag>  <melisTag id="contactform_003"><![CDATA[Subject]]></melisTag>   <melisTag id="contactform_004"><![CDATA[Message *]]></melisTag> <melisTag id="contacttext_001"><![CDATA[Get in <strong>touch</strong>]]></melisTag> <melisTag id="contacttext_002"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.]]></melisTag> <melisTag id="contacttext_003"><![CDATA[The <strong>Office</strong>]]></melisTag>   <melisTag id="contacttext_004"><![CDATA[<ul class="list-unstyled">              <li><i class="icon icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>              <li><i class="icon icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>             <li><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>          </ul>]]></melisTag> <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul><li><div class="contact-icon"><i class="zmdi zmdi-pin-drop"></i></div><div class="contact-text"><p><span>4, rue du Dahomey<br />75011 Paris, France</span><span><br /></span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-email-open"></i></div><div class="contact-text"><p><span>contact@melistechnology.com</span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-phone-paused"></i></div><div class="contact-text"><p><span>(+33) 972 386 280</span><span><br /></span></p></div></li></ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[menu]]></melisTag>   <melisTag id="footer_text_2"><![CDATA[<ul><li><a href="/">Home</a></li><li><a href="/home/news/id/2">News</a></li><li><a href="/home/our-designs/id/4">Our designs</a></li><li><a href="/home/about-us/id/29">About us</a></li><li><a href="/home/contact-us/id/30">Contact us</a></li></ul>]]></melisTag>  <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="homepage_line_1"><![CDATA[<div class="delivery-service-area ptb-30"><div class="container"><div class="row"><div class="col-md-3 col-sm-6 col-xs-12"><div class="single-service shadow-box text-center"><img src="/MelisDemoCmsTwig/images/icons/live.png" caption="false" data-mce-src="/MelisDemoCmsTwig/images/icons/live.png"><h5>Fashion show live</h5></div></div><div class="col-md-3 col-sm-6 col-xs-12"><div class="single-service shadow-box text-center"><img src="/MelisDemoCmsTwig/images/icons/chat.png" caption="false" data-mce-src="/MelisDemoCmsTwig/images/icons/chat.png"><h5>Chat with a star !</h5></div></div><div class="col-md-3 col-sm-6 col-xs-12"><div class="single-service shadow-box text-center"><img src="/MelisDemoCmsTwig/images/icons/news.png" caption="false" data-mce-src="/MelisDemoCmsTwig/images/icons/news.png"><h5>Last minute news</h5></div></div><div class="col-md-3 col-sm-6 col-xs-12"><div class="single-service shadow-box text-center"><img src="/MelisDemoCmsTwig/images/icons/trending.png" caption="false" data-mce-src="/MelisDemoCmsTwig/images/icons/trending.png"><h5>Ultimate trending</h5></div></div></div></div></div>]]></melisTag>  <melisTag id="homepage_line_2"><![CDATA[<div class="blog-area pb-70"><div class="container"><div class="row"><div class="col-md-12 col-sm-8 col-xs-12"><div class="single-blog-body"><div class="single-blog sb-2 mb-30"><div class="blog-content"><div class="blog-title"><h5 class="uppercase font-bold"><a href="/melis-demo-cms/our-designs/id/4" data-mce-href="/melis-demo-cms/our-designs/id/4">The ultimate trend of 2020<br></a><br data-mce-bogus="1"></h5><div class="blog-text"><p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, or random ised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum. <br><br>generators on the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available</p></div></div><div class="blockqot mtb-30"><blockquote><p>There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majorit. There are many variations of passages of Lorem Ipsum available, but the majorit.</p></blockquote></div></div></div></div></div></div></div></div>]]></melisTag>  <melisTag id="homepage_news_title"><![CDATA[News]]></melisTag>  <melisTag id="homepage_testimonial_title"><![CDATA[Testimonial]]></melisTag>    <melisTag id="footer_text_3"><![CDATA[<div class="instagrm"><ul><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/01.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/02.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/03.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/04.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/05.jpg" alt="" /></a></li><li><a href="#"><img src="/MelisDemoCmsTwig/images/gallery/06.jpg" alt="" /></a></li></ul></div>]]></melisTag> <melisTag id="footer_title_4"><![CDATA[Social Network]]></melisTag> <melisTag id="homepage_line_3"><![CDATA[<h5 class="uppercase font-bold"><a href="#" data-mce-href="#">Fashion show OBscuria in PARIS this spring 2020 !</a><br data-mce-bogus="1"></h5><div class="blog-text"><p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, or random ised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum. <br><br>generators on the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available</p></div>]]></melisTag>    <melisTag id="homepage_line_4"><![CDATA[<h5 class="uppercase font-bold"><a href="/home/our-designs/suits/suit-3/id/14" data-mce-href="/home/our-designs/suits/suit-3/id/14">The flagship product of 2020</a><br data-mce-bogus="1"></h5><div class="blog-text"><p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, or random ised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum. <br><br>generators on the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available</p></div>]]></melisTag>   <melisTag id="homepage_line_3_img"><![CDATA[<img class="img-responsive" src="/MelisDemoCmsTwig/images/news/N01.jpg"/>]]></melisTag> <melisTag id="homepage_line_4_img"><![CDATA[<img class="img-responsive" src="/MelisDemoCmsTwig/images/product/shoes/03/03.jpg" caption="false" data-mce-src="/MelisDemoCmsTwig/images/product/shoes/03/03.jpg">]]></melisTag></document>',
                                     ],
                                 ],
                                 Melis::CMS_PAGE_LANG => [
@@ -550,11 +550,11 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N01.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-11-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-11-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
-                                        'cnews_title' => 'Fashion show Obscuria in PARIS this spring 2017!',
+                                        'cnews_title' => 'Fashion show Obscuria in PARIS this spring 2020!',
                                         'cnews_paragraph1' => 'Paragraph 1, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                                         'cnews_paragraph2' => 'Paragraph 2, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                                         'cnews_paragraph3' => 'Paragraph 3, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -569,7 +569,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N02.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-11-27')),
+                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2019-11-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -588,7 +588,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N03.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-11-27')),
+                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2019-11-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -607,7 +607,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N04.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-11-27')),
+                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2019-11-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -626,7 +626,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N05.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-10-27')),
+                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2019-10-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -645,7 +645,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N06.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-10-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-10-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -664,7 +664,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N07.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-10-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-10-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -683,7 +683,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N08.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-10-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-10-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -702,7 +702,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N09.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-09-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-09-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -721,7 +721,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N10.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-10-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-10-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -740,7 +740,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N11.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-09-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-09-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -759,7 +759,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N12.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-09-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-09-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -778,7 +778,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N13.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-08-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-08-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -797,7 +797,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N14.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-08-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-08-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -816,7 +816,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N15.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-07-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-07-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -835,7 +835,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N16.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-07-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-07-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -854,7 +854,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N17.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-06-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-06-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -873,7 +873,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N18.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-06-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-06-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -913,7 +913,7 @@ return [
                                     [
                                         'mcsdetail_mcslider_id' => Melis::FOREIGN_KEY,
                                         'mcsdetail_status' => 1,
-                                        'mcsdetail_title' => 'Concise, Easy to Learn, Full Featured',
+                                        'mcsdetail_title' => 'Easy to Learn, Concise, Full Featured',
                                         'mcsdetail_sub1' => 'Why use Twig?',
                                         'mcsdetail_sub2' => 'Check it out!',
                                         'mcsdetail_sub3' => '',
