@@ -49,6 +49,11 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
 
         $view->setTerminal(true);
 
+        // Enable MelisCmsTwig in the back office
+        /** @var \MelisAssetManager\Service\MelisModulesService $moduleService */
+        $moduleService = $this->getServiceLocator()->get('MelisAssetManagerModulesService');
+        $moduleService->activateModule('MelisCmsTwig');
+
         return $view;
     }
 
