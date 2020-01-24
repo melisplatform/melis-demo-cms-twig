@@ -135,6 +135,7 @@ return [
             'MelisDemoCmsTwig\Controller\News' => \MelisDemoCmsTwig\Controller\NewsController::class,
             'MelisDemoCmsTwig\Controller\Search' => \MelisDemoCmsTwig\Controller\SearchController::class,
             'MelisDemoCmsTwig\Controller\Testimonial' => \MelisDemoCmsTwig\Controller\TestimonialController::class,
+            'MelisDemoCmsTwig\Controller\Page404' => \MelisDemoCmsTwig\Controller\Page404Controller::class,
             'MelisDemoCmsTwig\Controller\MelisSetupPostDownload' => \MelisDemoCmsTwig\Controller\MelisSetupPostDownloadController::class,
         ],
     ],

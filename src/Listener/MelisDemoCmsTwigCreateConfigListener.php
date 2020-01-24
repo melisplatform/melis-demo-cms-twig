@@ -34,7 +34,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
 
                 $siteId = (int)$e->getParams()['site_id'];
 
-//                $aboutUsPageId = (int)$pages['About us'];
+                // $aboutUsPageId = (int)$pages['About us'];
                 $homePageid = $siteId;
 
                 $melisDemoConfig = file_get_contents($path . '/config/MelisDemoCmsTwig.config.stub');
@@ -91,6 +91,28 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                         file_put_contents($path . '/config/MelisDemoCmsTwig.config.stub', $melisDemoConfig);
                     }
                 }
+            });
+
+        $callBackHandler = $sharedEvents->attach(
+            '*', 'melis_marketplace_site_update_page_404',
+            function ($e) {
+
+                $params = $e->getParams();
+
+                /** @var \MelisEngine\Model\Tables\MelisSite404Table $site404 */
+                $sm = $e->getTarget()->getServiceLocator();
+                $site404 = $sm->get('MelisEngineTableSite404');
+                /**
+                 * Save the site 404 page od
+                 */
+                $site404->save([
+                    's404_site_id' => $params['params']['siteId'],
+                    's404_page_id' => $params['params']['pageId'],
+                ]);
+
+                // $logPath = $_SERVER['DOCUMENT_ROOT'] . '/../cache/test.log';
+                // file_put_contents($logPath, print_r($params, true) . PHP_EOL . PHP_EOL, FILE_APPEND);
+                
             });
 
         $this->listeners[] = $callBackHandler;
