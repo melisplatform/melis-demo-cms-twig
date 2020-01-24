@@ -237,6 +237,19 @@ return [
                             'tpl_creation_date' => date('Y-m-d H:i:s'),
                             Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
                         ],
+                        [
+                            Melis::PRIMARY_KEY => 'tpl_id',
+                            'tpl_id' => Melis::CURRENT_TEMPLATE_ID,
+                            'tpl_site_id' => Melis::CMS_SITE_ID,
+                            'tpl_name' => '404',
+                            'tpl_type' => 'TWG',
+                            'tpl_zf2_website_folder' => __NAMESPACE__,
+                            'tpl_zf2_layout' => 'defaultTwigLayout',
+                            'tpl_zf2_controller' => 'Page404',
+                            'tpl_zf2_action' => 'index',
+                            'tpl_creation_date' => date('Y-m-d H:i:s'),
+                            Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
+                        ],
                     ],
                     // </editor-fold>
 
@@ -275,43 +288,12 @@ return [
                                         'pseo_id' => Melis::FOREIGN_KEY,
                                         'pseo_meta_title' => 'Home'
                                     ]
-                                ]
-                            ],
-                            Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID, Site::TRIGGER_EVENT => ['event_name' => 'melis_marketplace_site_intall_test', 'params' => ['page' => 'HomePage']]],
-                        ],
-                        // </HomePage>
-
-                        // <NewsPage>
-                        [
-                            // News Page
-                            Melis::PRIMARY_KEY => 'tree_page_id',
-                            'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                            'tree_father_page_id' => Melis::CMS_SITE_ID,
-                            'tree_page_order' => 1,
-                            Melis::RELATION => [
-                                Melis::CMS_PAGE_PUBLISHED => [
-                                    [
-                                        Melis::PRIMARY_KEY => 'page_id',
-                                        'page_id' => Melis::FOREIGN_KEY,
-                                        'page_type' => 'PAGE',
-                                        'page_status' => '1',
-                                        'page_menu' => 'LINK',
-                                        'page_name' => 'News',
-                                        'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'News List']],
-                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="contactform_001"><![CDATA[Your name *]]></melisTag>   <melisTag id="contactform_002"><![CDATA[Your email address *]]></melisTag>  <melisTag id="contactform_003"><![CDATA[Subject]]></melisTag>   <melisTag id="contactform_004"><![CDATA[Message *]]></melisTag> <melisTag id="contacttext_001"><![CDATA[Get in <strong>touch</strong>]]></melisTag> <melisTag id="contacttext_002"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.]]></melisTag> <melisTag id="contacttext_003"><![CDATA[The <strong>Office</strong>]]></melisTag>   <melisTag id="contacttext_004"><![CDATA[<ul class="list-unstyled">              <li><i class="icon icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>              <li><i class="icon icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>             <li><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>          </ul>]]></melisTag> <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul><li><div class="contact-icon"><i class="zmdi zmdi-pin-drop"></i><br></div><div class="contact-text"><p><span>777/a Seventh Street,</span> <span>Rampura, Bonosri</span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-email-open"></i><br></div><div class="contact-text"><p><span><a href="#" data-mce-href="#">company@gmail.com</a></span> <span><a href="#" data-mce-href="#">admin@devitems.com</a></span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-phone-paused"></i><br></div><div class="contact-text"><p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p></div></li></ul>]]></melisTag>  <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="header_title"><![CDATA[News]]></melisTag> <melisTag id="header_subtitle"><![CDATA[News]]></melisTag>  <melisTag id="header_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/bg/news.jpg" caption="false" height="50" width="240" />]]></melisTag></document>',
-
-                                    ],
-                                ],
-                                Melis::CMS_PAGE_LANG => [
-                                    [
-                                        'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                        'plang_lang_id' => 1,
-                                        'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                    ]
                                 ],
                                 // <NewsDetails>
                                 Melis::CMS_PAGE_TREE => [
+                                    // <NewsPage>
                                     [
+                                        // News Page
                                         Melis::PRIMARY_KEY => 'tree_page_id',
                                         'tree_page_id' => Melis::CURRENT_PAGE_ID,
                                         'tree_father_page_id' => Melis::FOREIGN_KEY,
@@ -321,12 +303,12 @@ return [
                                                 [
                                                     Melis::PRIMARY_KEY => 'page_id',
                                                     'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'NEWS_DETAIL',
+                                                    'page_type' => 'PAGE',
                                                     'page_status' => '1',
                                                     'page_menu' => 'LINK',
-                                                    'page_name' => 'News Details',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'News Details']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="contactform_001"><![CDATA[Your name *]]></melisTag>   <melisTag id="contactform_002"><![CDATA[Your email address *]]></melisTag>  <melisTag id="contactform_003"><![CDATA[Subject]]></melisTag>   <melisTag id="contactform_004"><![CDATA[Message *]]></melisTag> <melisTag id="contacttext_001"><![CDATA[Get in <strong>touch</strong>]]></melisTag> <melisTag id="contacttext_002"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.]]></melisTag> <melisTag id="contacttext_003"><![CDATA[The <strong>Office</strong>]]></melisTag>   <melisTag id="contacttext_004"><![CDATA[<ul class="list-unstyled">              <li><i class="icon icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>              <li><i class="icon icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>             <li><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>          </ul>]]></melisTag> <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="header_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/bg/news.jpg" caption="false" height="29" width="229" />]]></melisTag>   <melisTag id="header_title"><![CDATA[News]]></melisTag> <melisTag id="latest_news_title"><![CDATA[Latest news]]></melisTag></document>',
+                                                    'page_name' => 'News',
+                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'News List']],
+                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="contactform_001"><![CDATA[Your name *]]></melisTag>   <melisTag id="contactform_002"><![CDATA[Your email address *]]></melisTag>  <melisTag id="contactform_003"><![CDATA[Subject]]></melisTag>   <melisTag id="contactform_004"><![CDATA[Message *]]></melisTag> <melisTag id="contacttext_001"><![CDATA[Get in <strong>touch</strong>]]></melisTag> <melisTag id="contacttext_002"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.]]></melisTag> <melisTag id="contacttext_003"><![CDATA[The <strong>Office</strong>]]></melisTag>   <melisTag id="contacttext_004"><![CDATA[<ul class="list-unstyled">              <li><i class="icon icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>              <li><i class="icon icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>             <li><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>          </ul>]]></melisTag> <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul><li><div class="contact-icon"><i class="zmdi zmdi-pin-drop"></i><br></div><div class="contact-text"><p><span>777/a Seventh Street,</span> <span>Rampura, Bonosri</span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-email-open"></i><br></div><div class="contact-text"><p><span><a href="#" data-mce-href="#">company@gmail.com</a></span> <span><a href="#" data-mce-href="#">admin@devitems.com</a></span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-phone-paused"></i><br></div><div class="contact-text"><p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p></div></li></ul>]]></melisTag>  <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="header_title"><![CDATA[News]]></melisTag> <melisTag id="header_subtitle"><![CDATA[News]]></melisTag>  <melisTag id="header_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/bg/news.jpg" caption="false" height="50" width="240" />]]></melisTag></document>',
 
                                                 ],
                                             ],
@@ -337,94 +319,61 @@ return [
                                                     'plang_page_id_initial' =>  Melis::FOREIGN_KEY
                                                 ]
                                             ],
+                                            // <NewsDetails>
+                                            Melis::CMS_PAGE_TREE => [
+                                                [
+                                                    Melis::PRIMARY_KEY => 'tree_page_id',
+                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                    'tree_page_order' => 1,
+                                                    Melis::RELATION => [
+                                                        Melis::CMS_PAGE_PUBLISHED => [
+                                                            [
+                                                                Melis::PRIMARY_KEY => 'page_id',
+                                                                'page_id' => Melis::FOREIGN_KEY,
+                                                                'page_type' => 'NEWS_DETAIL',
+                                                                'page_status' => '1',
+                                                                'page_menu' => 'LINK',
+                                                                'page_name' => 'News Details',
+                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'News Details']],
+                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="contactform_001"><![CDATA[Your name *]]></melisTag>   <melisTag id="contactform_002"><![CDATA[Your email address *]]></melisTag>  <melisTag id="contactform_003"><![CDATA[Subject]]></melisTag>   <melisTag id="contactform_004"><![CDATA[Message *]]></melisTag> <melisTag id="contacttext_001"><![CDATA[Get in <strong>touch</strong>]]></melisTag> <melisTag id="contacttext_002"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.]]></melisTag> <melisTag id="contacttext_003"><![CDATA[The <strong>Office</strong>]]></melisTag>   <melisTag id="contacttext_004"><![CDATA[<ul class="list-unstyled">              <li><i class="icon icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>              <li><i class="icon icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>             <li><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>          </ul>]]></melisTag> <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="header_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/bg/news.jpg" caption="false" height="29" width="229" />]]></melisTag>   <melisTag id="header_title"><![CDATA[News]]></melisTag> <melisTag id="latest_news_title"><![CDATA[Latest news]]></melisTag></document>',
+
+                                                            ],
+                                                        ],
+                                                        Melis::CMS_PAGE_LANG => [
+                                                            [
+                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                'plang_lang_id' => 1,
+                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                            ]
+                                                        ],
+                                                    ],
+                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                ]
+                                            ]
+                                            // </NewsDetails>
                                         ],
                                         Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                    ]
-                                ]
-                                // </NewsDetails>
-                            ],
-                            Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-
-                        ],
-                        // </NewsPage>
-
-                        // <TraversalPages>
-                        [
-                            Melis::PRIMARY_KEY => 'tree_page_id',
-                            'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                            'tree_father_page_id' => Melis::CMS_SITE_ID,
-                            'tree_page_order' => 14,
-                            Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                            Melis::RELATION => [
-                                Melis::CMS_PAGE_PUBLISHED => [
-                                    [
-                                        Melis::PRIMARY_KEY => 'page_id',
-                                        'page_id' => Melis::FOREIGN_KEY,
-                                        'page_type' => 'FOLDER',
-                                        'page_status' => '1',
-                                        'page_menu' => 'NONE',
-                                        'page_name' => 'Transversal pages',
-                                        'page_tpl_id' => -1,
-                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"></document>',
 
                                     ],
-                                ],
-                                Melis::CMS_PAGE_LANG => [
-                                    [
-                                        'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                        'plang_lang_id' => 1,
-                                        'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                    ]
-                                ],
-                                Melis::CMS_PAGE_TREE => [
-                                    // <SearchResults>
+                                    // </NewsPage>
+
+                                    // <TraversalPages>
                                     [
                                         Melis::PRIMARY_KEY => 'tree_page_id',
                                         'tree_page_id' => Melis::CURRENT_PAGE_ID,
                                         'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 15,
+                                        'tree_page_order' => 2,
                                         Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
                                         Melis::RELATION => [
                                             Melis::CMS_PAGE_PUBLISHED => [
                                                 [
                                                     Melis::PRIMARY_KEY => 'page_id',
                                                     'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'LINK',
-                                                    'page_name' => 'Search results',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Search']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCmsTwig/images/bg/search.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="search_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag></document>',
-
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ]
-                                    ],
-                                    // </SearchResults>
-
-                                    // <TraversalPages | Testimonials>
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 1,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
+                                                    'page_type' => 'FOLDER',
                                                     'page_status' => '1',
                                                     'page_menu' => 'NONE',
-                                                    'page_name' => 'Testimonials',
+                                                    'page_name' => 'Transversal pages',
                                                     'page_tpl_id' => -1,
                                                     'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"></document>',
 
@@ -438,7 +387,7 @@ return [
                                                 ]
                                             ],
                                             Melis::CMS_PAGE_TREE => [
-                                                // <TraversalPages | Testimonials 1>
+                                                // <SearchResults>
                                                 [
                                                     Melis::PRIMARY_KEY => 'tree_page_id',
                                                     'tree_page_id' => Melis::CURRENT_PAGE_ID,
@@ -453,9 +402,9 @@ return [
                                                                 'page_type' => 'PAGE',
                                                                 'page_status' => '1',
                                                                 'page_menu' => 'LINK',
-                                                                'page_name' => 'Testimonial 1',
-                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Testimonial']],
-                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul><li><div class="contact-icon"><i class="zmdi zmdi-pin-drop"></i><br></div><div class="contact-text"><p><span>777/a Seventh Street,</span> <span>Rampura, Bonosri</span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-email-open"></i><br></div><div class="contact-text"><p><span><a href="#" data-mce-href="#">company@gmail.com</a></span> <span><a href="#" data-mce-href="#">admin@devitems.com</a></span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-phone-paused"></i><br></div><div class="contact-text"><p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p></div></li></ul>]]></melisTag>  <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="testimonial_title"><![CDATA[Anita Lendsly]]></melisTag>   <melisTag id="testimonial_subtitle"><![CDATA[Model]]></melisTag>    <melisTag id="testimonial_text"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.]]></melisTag>  <melisTag id="testimonial_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/team/testi-03.jpg" alt="" data-mce-src="/MelisDemoCmsTwig/images/team/testi-03.jpg">]]></melisTag> <melisTag id="footer_text_3"><![CDATA[<img src="/MelisDemoCmsTwig/images/team/testi-03.jpg" alt="" />]]></melisTag></document>',
+                                                                'page_name' => 'Search results',
+                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Search']],
+                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCmsTwig/images/bg/search.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="search_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag></document>',
 
                                                             ],
                                                         ],
@@ -468,9 +417,9 @@ return [
                                                         ],
                                                     ]
                                                 ],
-                                                // <TraversalPages | Testimonials 1>
+                                                // </SearchResults>
 
-                                                // <TraversalPages | Testimonials 2>
+                                                // <TraversalPages | Testimonials>
                                                 [
                                                     Melis::PRIMARY_KEY => 'tree_page_id',
                                                     'tree_page_id' => Melis::CURRENT_PAGE_ID,
@@ -484,10 +433,10 @@ return [
                                                                 'page_id' => Melis::FOREIGN_KEY,
                                                                 'page_type' => 'PAGE',
                                                                 'page_status' => '1',
-                                                                'page_menu' => 'LINK',
-                                                                'page_name' => 'Testimonial 2',
-                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Testimonial']],
-                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul><li><div class="contact-icon"><i class="zmdi zmdi-pin-drop"></i><br></div><div class="contact-text"><p><span>777/a Seventh Street,</span> <span>Rampura, Bonosri</span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-email-open"></i><br></div><div class="contact-text"><p><span><a href="#" data-mce-href="#">company@gmail.com</a></span> <span><a href="#" data-mce-href="#">admin@devitems.com</a></span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-phone-paused"></i><br></div><div class="contact-text"><p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p></div></li></ul>]]></melisTag>  <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="testimonial_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/team/testi-02.jpg" />]]></melisTag>    <melisTag id="testimonial_title"><![CDATA[Brad Wayne]]></melisTag>  <melisTag id="testimonial_subtitle"><![CDATA[Model]]></melisTag>    <melisTag id="testimonial_text"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.]]></melisTag></document>',
+                                                                'page_menu' => 'NONE',
+                                                                'page_name' => 'Testimonials',
+                                                                'page_tpl_id' => -1,
+                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"></document>',
 
                                                             ],
                                                         ],
@@ -498,49 +447,149 @@ return [
                                                                 'plang_page_id_initial' =>  Melis::FOREIGN_KEY
                                                             ]
                                                         ],
-                                                    ]
-                                                ],
-                                                // <TraversalPages | Testimonials 2>
-
-                                                // <TraversalPages | Testimonials 3>
-                                                [
-                                                    Melis::PRIMARY_KEY => 'tree_page_id',
-                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                                    'tree_page_order' => 3,
-                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                                    Melis::RELATION => [
-                                                        Melis::CMS_PAGE_PUBLISHED => [
+                                                        Melis::CMS_PAGE_TREE => [
+                                                            // <TraversalPages | Testimonials 1>
                                                             [
-                                                                Melis::PRIMARY_KEY => 'page_id',
-                                                                'page_id' => Melis::FOREIGN_KEY,
-                                                                'page_type' => 'PAGE',
-                                                                'page_status' => '1',
-                                                                'page_menu' => 'LINK',
-                                                                'page_name' => 'Testimonial 3',
-                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Testimonial']],
-                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="testimonial_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/team/testi-01.jpg" />]]></melisTag>    <melisTag id="testimonial_title"><![CDATA[Laureen Parson]]></melisTag>  <melisTag id="testimonial_subtitle"><![CDATA[Designer]]></melisTag> <melisTag id="testimonial_text"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.]]></melisTag></document>',
+                                                                Melis::PRIMARY_KEY => 'tree_page_id',
+                                                                'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                                'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                                'tree_page_order' => 1,
+                                                                Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                                Melis::RELATION => [
+                                                                    Melis::CMS_PAGE_PUBLISHED => [
+                                                                        [
+                                                                            Melis::PRIMARY_KEY => 'page_id',
+                                                                            'page_id' => Melis::FOREIGN_KEY,
+                                                                            'page_type' => 'PAGE',
+                                                                            'page_status' => '1',
+                                                                            'page_menu' => 'LINK',
+                                                                            'page_name' => 'Testimonial 1',
+                                                                            'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Testimonial']],
+                                                                            'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul><li><div class="contact-icon"><i class="zmdi zmdi-pin-drop"></i><br></div><div class="contact-text"><p><span>777/a Seventh Street,</span> <span>Rampura, Bonosri</span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-email-open"></i><br></div><div class="contact-text"><p><span><a href="#" data-mce-href="#">company@gmail.com</a></span> <span><a href="#" data-mce-href="#">admin@devitems.com</a></span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-phone-paused"></i><br></div><div class="contact-text"><p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p></div></li></ul>]]></melisTag>  <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="testimonial_title"><![CDATA[Anita Lendsly]]></melisTag>   <melisTag id="testimonial_subtitle"><![CDATA[Model]]></melisTag>    <melisTag id="testimonial_text"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.]]></melisTag>  <melisTag id="testimonial_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/team/testi-03.jpg" alt="" data-mce-src="/MelisDemoCmsTwig/images/team/testi-03.jpg">]]></melisTag> <melisTag id="footer_text_3"><![CDATA[<img src="/MelisDemoCmsTwig/images/team/testi-03.jpg" alt="" />]]></melisTag></document>',
 
+                                                                        ],
+                                                                    ],
+                                                                    Melis::CMS_PAGE_LANG => [
+                                                                        [
+                                                                            'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                            'plang_lang_id' => 1,
+                                                                            'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                                        ]
+                                                                    ],
+                                                                ]
                                                             ],
-                                                        ],
-                                                        Melis::CMS_PAGE_LANG => [
+                                                            // <TraversalPages | Testimonials 1>
+
+                                                            // <TraversalPages | Testimonials 2>
                                                             [
-                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                                'plang_lang_id' => 1,
-                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                            ]
-                                                        ],
+                                                                Melis::PRIMARY_KEY => 'tree_page_id',
+                                                                'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                                'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                                'tree_page_order' => 2,
+                                                                Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                                Melis::RELATION => [
+                                                                    Melis::CMS_PAGE_PUBLISHED => [
+                                                                        [
+                                                                            Melis::PRIMARY_KEY => 'page_id',
+                                                                            'page_id' => Melis::FOREIGN_KEY,
+                                                                            'page_type' => 'PAGE',
+                                                                            'page_status' => '1',
+                                                                            'page_menu' => 'LINK',
+                                                                            'page_name' => 'Testimonial 2',
+                                                                            'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Testimonial']],
+                                                                            'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul><li><div class="contact-icon"><i class="zmdi zmdi-pin-drop"></i><br></div><div class="contact-text"><p><span>777/a Seventh Street,</span> <span>Rampura, Bonosri</span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-email-open"></i><br></div><div class="contact-text"><p><span><a href="#" data-mce-href="#">company@gmail.com</a></span> <span><a href="#" data-mce-href="#">admin@devitems.com</a></span></p></div></li><li><div class="contact-icon"><i class="zmdi zmdi-phone-paused"></i><br></div><div class="contact-text"><p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p></div></li></ul>]]></melisTag>  <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="testimonial_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/team/testi-02.jpg" />]]></melisTag>    <melisTag id="testimonial_title"><![CDATA[Brad Wayne]]></melisTag>  <melisTag id="testimonial_subtitle"><![CDATA[Model]]></melisTag>    <melisTag id="testimonial_text"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.]]></melisTag></document>',
+
+                                                                        ],
+                                                                    ],
+                                                                    Melis::CMS_PAGE_LANG => [
+                                                                        [
+                                                                            'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                            'plang_lang_id' => 1,
+                                                                            'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                                        ]
+                                                                    ],
+                                                                ]
+                                                            ],
+                                                            // <TraversalPages | Testimonials 2>
+
+                                                            // <TraversalPages | Testimonials 3>
+                                                            [
+                                                                Melis::PRIMARY_KEY => 'tree_page_id',
+                                                                'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                                'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                                'tree_page_order' => 3,
+                                                                Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                                Melis::RELATION => [
+                                                                    Melis::CMS_PAGE_PUBLISHED => [
+                                                                        [
+                                                                            Melis::PRIMARY_KEY => 'page_id',
+                                                                            'page_id' => Melis::FOREIGN_KEY,
+                                                                            'page_type' => 'PAGE',
+                                                                            'page_status' => '1',
+                                                                            'page_menu' => 'LINK',
+                                                                            'page_name' => 'Testimonial 3',
+                                                                            'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Testimonial']],
+                                                                            'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag>    <melisTag id="footer_text_2"><![CDATA[<li><a href="#">My Account</a></li>                                                <li><a href="#">Order History</a></li>                                                <li><a href="#">Wishlist</a></li>                                                <li><a href="#">Returnes</a></li>                                                <li><a href="#">Private Policy</a></li>                                                <li><a href="#">Site Map</a></li>]]></melisTag> <melisTag id="footer_title_3"><![CDATA[InstaGram]]></melisTag>  <melisTag id="testimonial_image"><![CDATA[<img src="/MelisDemoCmsTwig/images/team/testi-01.jpg" />]]></melisTag>    <melisTag id="testimonial_title"><![CDATA[Laureen Parson]]></melisTag>  <melisTag id="testimonial_subtitle"><![CDATA[Designer]]></melisTag> <melisTag id="testimonial_text"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.]]></melisTag></document>',
+
+                                                                        ],
+                                                                    ],
+                                                                    Melis::CMS_PAGE_LANG => [
+                                                                        [
+                                                                            'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                            'plang_lang_id' => 1,
+                                                                            'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                                        ]
+                                                                    ],
+                                                                ]
+                                                            ],
+                                                            // <TraversalPages | Testimonials 3>
+                                                        ]
                                                     ]
                                                 ],
-                                                // <TraversalPages | Testimonials 3>
+                                                // </TraversalPages>
                                             ]
                                         ]
                                     ],
                                     // </TraversalPages>
+
+                                    // <Page404>
+                                    [
+                                        // Home Page
+                                        Melis::PRIMARY_KEY => 'tree_page_id',
+                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                        'tree_page_order' => 3,
+                                        Melis::RELATION => [
+                                            Melis::CMS_PAGE_PUBLISHED => [
+                                                [
+                                                    Melis::PRIMARY_KEY => 'page_id',
+                                                    'page_id' => Melis::FOREIGN_KEY,
+                                                    'page_type' => 'PAGE',
+                                                    'page_status' => '1',
+                                                    'page_menu' => 'None',
+                                                    'page_name' => '404',
+                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => '404']],
+                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?> <document type="MelisCMS" author="MelisTechnology" version="2.0"> <melisTag id="page-404" plugin_container_id="" type="html"><![CDATA[<div class="page-404-container"> <h1>404</h1> <h4>Sorry, the page you were looking for could not be found.</h4> <p>You can return to our <a href="/">home page</a>.</p> </div>]]></melisTag> </document>', ],
+                                            ],
+                                            Melis::CMS_PAGE_LANG => [
+                                                [
+                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                    'plang_lang_id' => 1,
+                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                ]
+                                            ]
+                                        ],
+                                        Site::THEN => [Site::TRIGGER_EVENT => ['event_name' => 'melis_marketplace_site_update_page_404', 'params' => ['siteId' => Melis::CMS_SITE_ID, 'pageId' => Melis::CURRENT_PAGE_ID]]],
+                                    ],
+                                    // </Page404>
                                 ]
-                            ]
+
+                            ],
+                            Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID, Site::TRIGGER_EVENT => ['event_name' => 'melis_marketplace_site_intall_test', 'params' => ['page' => 'HomePage']]],
                         ],
-                        // </TraversalPages>
+                        // </HomePage>
+
+                        
                     ],
                     // </editor-fold>
 

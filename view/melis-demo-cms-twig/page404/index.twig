@@ -1,0 +1,16 @@
+{% extends baseTemplate %}
+
+{% block content %}
+
+{% set textLink = MelisLink(SiteConfig('homePageId'), false) %}
+
+{{
+	MelisTag(idPage, "page-404", 'html', 
+    '<div class="page-404-container">
+        <h1>404</h1>
+        <h4>Sorry, the page you were looking for could not be found.</h4>
+        <p>You can return to our <a href="' ~ textLink ~'">home page</a>.</p>
+    </div>') 
+}}
+
+{% endblock %}
