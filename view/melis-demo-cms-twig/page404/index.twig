@@ -4,6 +4,10 @@
 
 {% set textLink = MelisLink(SiteConfig('homePageId'), false) %}
 
+{% if renderMode == 'melis' %}
+<div style="margin-top: 40px">
+{% endif %}
+
 {{
 	MelisTag(idPage, "page-404", 'html', 
     '<div class="page-404-container">
@@ -12,5 +16,9 @@
         <p>You can return to our <a href="' ~ textLink ~'">home page</a>.</p>
     </div>') 
 }}
+
+{% if renderMode == 'melis' %}
+</div>
+{% endif %}
 
 {% endblock %}
