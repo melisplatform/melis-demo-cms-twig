@@ -6,7 +6,7 @@ return [
             '%site_id%' => [
                 'en_EN' => [
                     //homepage id
-                    'homePageId' => '%site_id%',
+                    'homePageId' => '%site_home_page_id%',
                     // Submenu limit
                     'sub_menu_limit' => null,
                     // News Page Id
