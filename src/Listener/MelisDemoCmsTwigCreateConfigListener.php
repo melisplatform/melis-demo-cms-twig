@@ -33,14 +33,15 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                 $path = $moduleService->getModulePath('MelisDemoCmsTwig');
 
                 $siteId = (int)$e->getParams()['site_id'];
+                $homePageid = (int)$e->getParams()['site_home_page_id'];
 
 //                $aboutUsPageId = (int)$pages['About us'];
-                $homePageid = $siteId;
 
                 $melisDemoConfig = file_get_contents($path . '/config/MelisDemoCmsTwig.config.stub');
                 $melisDemoConfig = str_replace(
                     [
                         '\'%site_id%\'',
+                        '\'%site_home_page_id%\'',
                         '\'%news_page_id%\'',
                         '\'%news_details_id%\'',
                         '\'%testimonial%\'',
@@ -48,6 +49,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                     ],
                     [
                         $siteId,
+                        $homePageid,
                         $pages['News'],
                         $pages['News Details'],
                         $pages['Testimonials'],

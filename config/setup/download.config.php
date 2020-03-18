@@ -259,7 +259,7 @@ return [
                         [
                             // Home Page
                             Melis::PRIMARY_KEY => 'tree_page_id',
-                            'tree_page_id' => Melis::CMS_SITE_ID,
+                            'tree_page_id' => Melis::CMS_SITE_HOME_PAGE_ID,
                             'tree_father_page_id' => Melis::CMS_SITE_DEFAULT_PARENT_ID,
                             'tree_page_order' => 1,
                             Melis::RELATION => [
@@ -944,7 +944,7 @@ return [
                     Melis::CMS_SLIDER => [
                         [
                             'mcslide_name' => 'Homepage Header Slider',
-                            'mcslide_page_id' => Melis::CMS_SITE_ID,
+                            'mcslide_page_id' => Melis::CMS_SITE_HOME_PAGE_ID,
                             'mcslide_date' => date('Y-m-d H:i:s'),
                             Melis::RELATION => [
                                 Melis::CMS_SLIDER_DETAILS => [
