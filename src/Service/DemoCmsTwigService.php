@@ -9,12 +9,12 @@
 
 namespace MelisDemoCmsTwig\Service;
 
-use MelisCore\Service\MelisCoreGeneralService;
+use MelisCore\Service\MelisGeneralService;
 
 /**
  * MelisDemoCmsTwig Services
  */
-class DemoCmsTwigService extends MelisCoreGeneralService
+class DemoCmsTwigService extends MelisGeneralService
 {
     /**
      * This method will customize the Site menu

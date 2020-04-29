@@ -9,12 +9,12 @@
 
 namespace MelisDemoCmsTwig\Service;
 
-use MelisCore\Service\MelisCoreGeneralService;
+use MelisCore\Service\MelisGeneralService;
 
 /**
  * Setup DemoCms Services
  */
-class SetupDemoCmsTwigService extends MelisCoreGeneralService
+class SetupDemoCmsTwigService extends MelisGeneralService
 {
     private $siteId;
     private $mainPageId;

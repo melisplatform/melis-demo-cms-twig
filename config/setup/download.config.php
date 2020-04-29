@@ -22,12 +22,12 @@ return [
                             'method' => 'POST',
                             'action' => '',
                         ],
-                        'hydrator' => \Zend\Stdlib\Hydrator\ArraySerializable::class,
+                        'hydrator' => \Laminas\Stdlib\Hydrator\ArraySerializable::class,
                         'elements' => [
                             [
                                 'spec' => [
                                     'name' => 'scheme',
-                                    'type' => \Zend\Form\Element\Select::class,
+                                    'type' => \Laminas\Form\Element\Select::class,
                                     'options' => [
                                         'label' => 'tr_site_demo_cms_tool_site_scheme',
                                         'tooltip' => 'tr_site_demo_cms_tool_site_scheme tooltip',
@@ -49,7 +49,7 @@ return [
                             [
                                 'spec' => [
                                     'name' => 'domain',
-                                    'type' => \Zend\Form\Element\Text::class,
+                                    'type' => \Laminas\Form\Element\Text::class,
                                     'options' => [
                                         'label' => 'tr_site_demo_cms_tool_site_domain',
                                         'tooltip' => 'tr_site_demo_cms_tool_site_domain tooltip',
@@ -67,7 +67,7 @@ return [
                             [
                                 'spec' => [
                                     'name' => 'name',
-                                    'type' => \Zend\Form\Element\Text::class,
+                                    'type' => \Laminas\Form\Element\Text::class,
                                     'options' => [
                                         'label' => 'tr_site_demo_cms_name',
                                         'tooltip' => 'tr_site_demo_cms_name_tooltip',
@@ -93,7 +93,7 @@ return [
                                         'options' => [
                                             'haystack' => ['http', 'https'],
                                             'messages' => [
-                                                \Zend\Validator\InArray::NOT_IN_ARRAY => 'tr_site_demo_cms_tool_site_scheme_invalid_selection',
+                                                \Laminas\Validator\InArray::NOT_IN_ARRAY => 'tr_site_demo_cms_tool_site_scheme_invalid_selection',
                                             ],
                                         ],
                                     ],
@@ -101,7 +101,7 @@ return [
                                         'name' => 'NotEmpty',
                                         'options' => [
                                             'messages' => [
-                                                \Zend\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_scheme_error_empty',
+                                                \Laminas\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_scheme_error_empty',
                                             ],
                                         ],
                                     ],
@@ -119,7 +119,7 @@ return [
                                             'encoding' => 'UTF-8',
                                             'max' => 50,
                                             'messages' => [
-                                                \Zend\Validator\StringLength::TOO_LONG => 'tr_melis_installer_tool_site_domain_error_long',
+                                                \Laminas\Validator\StringLength::TOO_LONG => 'tr_melis_installer_tool_site_domain_error_long',
                                             ],
                                         ],
                                     ],
@@ -127,7 +127,7 @@ return [
                                         'name' => 'NotEmpty',
                                         'options' => [
                                             'messages' => [
-                                                \Zend\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_domain_error_empty',
+                                                \Laminas\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_domain_error_empty',
                                             ],
                                         ],
                                     ],
@@ -147,7 +147,7 @@ return [
                                             'encoding' => 'UTF-8',
                                             'max' => 50,
                                             'messages' => [
-                                                \Zend\Validator\StringLength::TOO_LONG => 'tr_site_demo_cms_tool_site_name_error_long',
+                                                \Laminas\Validator\StringLength::TOO_LONG => 'tr_site_demo_cms_tool_site_name_error_long',
                                             ],
                                         ],
                                     ],
@@ -155,7 +155,7 @@ return [
                                         'name' => 'NotEmpty',
                                         'options' => [
                                             'messages' => [
-                                                \Zend\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_name_error_empty',
+                                                \Laminas\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_name_error_empty',
                                             ],
                                         ],
                                     ],
@@ -224,19 +224,19 @@ return [
                             'tpl_creation_date' => date('Y-m-d H:i:s'),
                             Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
                         ],
-                        [
-                            Melis::PRIMARY_KEY => 'tpl_id',
-                            'tpl_id' => Melis::CURRENT_TEMPLATE_ID,
-                            'tpl_site_id' => Melis::CMS_SITE_ID,
-                            'tpl_name' => 'Search',
-                            'tpl_type' => 'ZF2',
-                            'tpl_zf2_website_folder' => __NAMESPACE__,
-                            'tpl_zf2_layout' => 'defaultLayout',
-                            'tpl_zf2_controller' => 'Search',
-                            'tpl_zf2_action' => 'results',
-                            'tpl_creation_date' => date('Y-m-d H:i:s'),
-                            Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
-                        ],
+//                        [
+//                            Melis::PRIMARY_KEY => 'tpl_id',
+//                            'tpl_id' => Melis::CURRENT_TEMPLATE_ID,
+//                            'tpl_site_id' => Melis::CMS_SITE_ID,
+//                            'tpl_name' => 'Search',
+//                            'tpl_type' => 'ZF2',
+//                            'tpl_zf2_website_folder' => __NAMESPACE__,
+//                            'tpl_zf2_layout' => 'defaultLayout',
+//                            'tpl_zf2_controller' => 'Search',
+//                            'tpl_zf2_action' => 'results',
+//                            'tpl_creation_date' => date('Y-m-d H:i:s'),
+//                            Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
+//                        ],
                         [
                             Melis::PRIMARY_KEY => 'tpl_id',
                             'tpl_id' => Melis::CURRENT_TEMPLATE_ID,
@@ -388,35 +388,35 @@ return [
                                             ],
                                             Melis::CMS_PAGE_TREE => [
                                                 // <SearchResults>
-                                                [
-                                                    Melis::PRIMARY_KEY => 'tree_page_id',
-                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                                    'tree_page_order' => 1,
-                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                                    Melis::RELATION => [
-                                                        Melis::CMS_PAGE_PUBLISHED => [
-                                                            [
-                                                                Melis::PRIMARY_KEY => 'page_id',
-                                                                'page_id' => Melis::FOREIGN_KEY,
-                                                                'page_type' => 'PAGE',
-                                                                'page_status' => '1',
-                                                                'page_menu' => 'LINK',
-                                                                'page_name' => 'Search results',
-                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Search']],
-                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCmsTwig/images/bg/search.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="search_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag></document>',
-
-                                                            ],
-                                                        ],
-                                                        Melis::CMS_PAGE_LANG => [
-                                                            [
-                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                                'plang_lang_id' => 1,
-                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                            ]
-                                                        ],
-                                                    ]
-                                                ],
+//                                                [
+//                                                    Melis::PRIMARY_KEY => 'tree_page_id',
+//                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
+//                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
+//                                                    'tree_page_order' => 1,
+//                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+//                                                    Melis::RELATION => [
+//                                                        Melis::CMS_PAGE_PUBLISHED => [
+//                                                            [
+//                                                                Melis::PRIMARY_KEY => 'page_id',
+//                                                                'page_id' => Melis::FOREIGN_KEY,
+//                                                                'page_type' => 'PAGE',
+//                                                                'page_status' => '1',
+//                                                                'page_menu' => 'LINK',
+//                                                                'page_name' => 'Search results',
+//                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Search']],
+/*                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCmsTwig/images/bg/search.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="search_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag></document>',*/
+//
+//                                                            ],
+//                                                        ],
+//                                                        Melis::CMS_PAGE_LANG => [
+//                                                            [
+//                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
+//                                                                'plang_lang_id' => 1,
+//                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+//                                                            ]
+//                                                        ],
+//                                                    ]
+//                                                ],
                                                 // </SearchResults>
 
                                                 // <TraversalPages | Testimonials>
@@ -974,7 +974,7 @@ return [
                                         'mcsdetail_mcslider_id' => Melis::FOREIGN_KEY,
                                         'mcsdetail_status' => 1,
                                         'mcsdetail_title' => 'Best of both worlds!',
-                                        'mcsdetail_sub1' => 'Twig or Zend Framework',
+                                        'mcsdetail_sub1' => 'Twig or Laminas Framework',
                                         'mcsdetail_sub2' => 'Take a look!',
                                         'mcsdetail_sub3' => '',
                                         'mcsdetail_link' => 'https://github.com/melisplatform/melis-cms-twig#ii-child-template-creation',

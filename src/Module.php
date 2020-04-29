@@ -9,12 +9,13 @@
 
 namespace MelisDemoCmsTwig;
 
+use MelisDemoCmsTwig\Listener\MelisDemoCmsTwigCreateConfigListener;
 use MelisDemoCmsTwig\Listener\SetupDemoCmsTwigListener;
 use MelisDemoCmsTwig\Listener\SiteMenuCustomizationListener;
-use Zend\Mvc\ModuleRouteListener;
-use Zend\Mvc\MvcEvent;
-use Zend\Session\Container;
-use Zend\Stdlib\ArrayUtils;
+use Laminas\Mvc\ModuleRouteListener;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Session\Container;
+use Laminas\Stdlib\ArrayUtils;
 
 class Module
 {
@@ -34,11 +35,11 @@ class Module
         });
 
         // Adding Event listener to customize the Site menu from Plugin
-        $eventManager->attach(new SiteMenuCustomizationListener());
+        (new SiteMenuCustomizationListener())->attach($eventManager);
         // Event listener to Setup MelisDemoCms pre-defined datas
-        $eventManager->attach(new SetupDemoCmsTwigListener());
+        (new SetupDemoCmsTwigListener())->attach($eventManager);
 
-        $eventManager->attach(new \MelisDemoCmsTwig\Listener\MelisDemoCmsTwigCreateConfigListener());
+        (new MelisDemoCmsTwigCreateConfigListener())->attach($eventManager);
 
         $this->createTranslations($e);
     }
@@ -104,7 +105,7 @@ class Module
     public function getAutoloaderConfig()
     {
         return [
-            'Zend\Loader\StandardAutoloader' => [
+            'Laminas\Loader\StandardAutoloader' => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ],

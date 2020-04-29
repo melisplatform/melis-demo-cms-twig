@@ -10,15 +10,15 @@
 namespace MelisDemoCmsTwig\Controller;
 
 use MelisDemoCmsTwig\Controller\BaseController;
-use Zend\View\Model\JsonModel;
-use Zend\View\Model\ViewModel;
+use Laminas\View\Model\JsonModel;
+use Laminas\View\Model\ViewModel;
 
 class HomeController extends BaseController
 {
     public function indexAction()
     {
         /** get the site config */
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         /** Generating Homepage header Slider using MelisCmsSliderShowSliderPlugin Plugin */
         $showSliderParameters = array(

@@ -1,10 +1,10 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * Laminas Framework (http://framework.Laminas.com/)
  *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @link      http://github.com/Laminasframework/LaminasSkeletonApplication for the canonical source repository
+ * @copyright Copyright (c) 2005-2015 Laminas Technologies USA Inc. (http://www.Laminas.com)
+ * @license   http://framework.Laminas.com/license/new-bsd New BSD License
  */
 
 return [
@@ -111,18 +111,15 @@ return [
     ],
     'service_manager' => [
         'abstract_factories' => [
-            \Zend\Cache\Service\StorageCacheAbstractServiceFactory::class,
-            \Zend\Log\LoggerAbstractServiceFactory::class,
+            \Laminas\Cache\Service\StorageCacheAbstractServiceFactory::class,
+            \Laminas\Log\LoggerAbstractServiceFactory::class,
         ],
         'aliases' => [
             'translator' => 'MvcTranslator',
             'MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\MelisPlatformTable::class,
-        ],
-        'factories' => [
+
             'DemoCmsTwigService' => \MelisDemoCmsTwig\Service\Factory\DemoCmsTwigServiceFactory::class,
             'SetupDemoCmsTwigService' => MelisDemoCmsTwig\Service\Factory\SetupDemoCmsTwigServiceFactory::class,
-
-            'MelisDemoCmsTwig\Model\Tables\MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\Factory\MelisPlatformTableFactory::class,
         ],
     ],
     'translator' => [
@@ -133,7 +130,7 @@ return [
             'MelisDemoCmsTwig\Controller\Base' => \MelisDemoCmsTwig\Controller\BaseController::class,
             'MelisDemoCmsTwig\Controller\Home' => \MelisDemoCmsTwig\Controller\HomeController::class,
             'MelisDemoCmsTwig\Controller\News' => \MelisDemoCmsTwig\Controller\NewsController::class,
-            'MelisDemoCmsTwig\Controller\Search' => \MelisDemoCmsTwig\Controller\SearchController::class,
+//            'MelisDemoCmsTwig\Controller\Search' => \MelisDemoCmsTwig\Controller\SearchController::class,
             'MelisDemoCmsTwig\Controller\Testimonial' => \MelisDemoCmsTwig\Controller\TestimonialController::class,
             'MelisDemoCmsTwig\Controller\Page404' => \MelisDemoCmsTwig\Controller\Page404Controller::class,
             'MelisDemoCmsTwig\Controller\MelisSetupPostDownload' => \MelisDemoCmsTwig\Controller\MelisSetupPostDownloadController::class,
@@ -155,7 +152,7 @@ return [
             'MelisDemoCmsTwig' => true,
         ],
         'template_map' => [
-            // Zend default layout
+            // Laminas default layout
             'layout/layout' => __DIR__ . '/../view/layout/defaultTwigLayout.twig',
             // Main layout
             'MelisDemoCmsTwig/defaultLayout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
