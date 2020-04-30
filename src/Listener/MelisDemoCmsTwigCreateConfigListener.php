@@ -77,7 +77,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                 if (!empty($param['table_name'])) {
                     if ($param['table_name'] == 'melis_cms_slider') {
 
-                        $sm = $e->getTarget()->getServiceLocator();
+                        $sm = $e->getTarget()->getServiceManager();
                         $moduleService = $sm->get('MelisAssetManagerModulesService');
                         $path = $moduleService->getModulePath('MelisDemoCmsTwig');
 
@@ -103,7 +103,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                 $params = $e->getParams();
 
                 /** @var \MelisEngine\Model\Tables\MelisSite404Table $site404 */
-                $sm = $e->getTarget()->getServiceLocator();
+                $sm = $e->getTarget()->getServiceManager();
                 $site404 = $sm->get('MelisEngineTableSite404');
 
                 $site = $site404->getEntryByField('s404_site_id', $params['params']['siteId'])->current();

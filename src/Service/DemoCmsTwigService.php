@@ -84,7 +84,7 @@ class DemoCmsTwigService extends MelisGeneralService
         /**
          * get the site config service
          */
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         // Getting the Page Id where the News Details will render
         $newsDetailsIdPage = $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $newsId);
@@ -182,7 +182,7 @@ class DemoCmsTwigService extends MelisGeneralService
         /**
          * get the site config service
          */
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
         $newsIdPage = $siteConfigSrv->getSiteConfigByKey('news_menu_page_id');
 
         /**
