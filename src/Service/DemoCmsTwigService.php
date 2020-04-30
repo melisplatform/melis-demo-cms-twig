@@ -109,11 +109,11 @@ class DemoCmsTwigService extends MelisGeneralService
          *          'year' => 2016,
          *      ),
          */
-        $newsTable = $this->serviceLocator->get('MelisCmsNewsTable');
+        $newsTable = $this->getServiceManager()->get('MelisCmsNewsTable');
         $newsList = $newsTable->getNewsListByMonths(4, $siteConfigSrv->getSiteConfigByKey('site_id', $newsId))->toArray();
 
         // Page Tree service to generate Page Link
-        $melisTree = $this->serviceLocator->get('MelisEngineTree');
+        $melisTree = $this->getServiceManager()->get('MelisEngineTree');
 
         $newsListMenu = array();
         foreach ($newsList As $key => $val) {
@@ -188,7 +188,7 @@ class DemoCmsTwigService extends MelisGeneralService
         /**
          * Retreiving the the list of News group by months and year
          */
-        $newsTable = $this->serviceLocator->get('MelisCmsNewsTable');
+        $newsTable = $this->getServiceManager()->get('MelisCmsNewsTable');
         $newsList = $newsTable->getNewsListByMonths(null, $siteConfigSrv->getSiteConfigByKey('site_id'));
 
         $list = array();
