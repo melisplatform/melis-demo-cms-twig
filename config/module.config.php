@@ -117,8 +117,8 @@ return [
             'translator' => 'MvcTranslator',
             'MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\MelisPlatformTable::class,
 
-            'DemoCmsTwigService' => \MelisDemoCmsTwig\Service\Factory\DemoCmsTwigServiceFactory::class,
-            'SetupDemoCmsTwigService' => MelisDemoCmsTwig\Service\Factory\SetupDemoCmsTwigServiceFactory::class,
+            'DemoCmsTwigService' => \MelisDemoCmsTwig\Service\DemoCmsTwigService::class,
+            'SetupDemoCmsTwigService' => MelisDemoCmsTwig\Service\SetupDemoCmsTwigService::class,
         ],
     ],
     'translator' => [
