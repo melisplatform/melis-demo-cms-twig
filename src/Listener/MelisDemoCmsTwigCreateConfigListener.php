@@ -24,7 +24,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
             '*',
             'melis_marketplace_site_install_results',
             function ($e) {
-                $sm = $e->getTarget()->getServiceManger();
+                $sm = $e->getTarget()->getServiceManager();
 
                 $pages = $this->createMap((array)$e->getParams()['pages']);
                 /** @var \MelisAssetManager\Service\MelisModulesService $moduleService */
