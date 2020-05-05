@@ -171,7 +171,7 @@ return [
             'MelisDemoCmsTwig/plugin/list-paginator' => __DIR__ . '/../view/plugins/list-paginator.phtml',
             'MelisDemoCmsTwig/plugin/news-details' => __DIR__ . '/../view/plugins/news-details.phtml',
             'MelisDemoCmsTwig/plugin/aboutus-slider' => __DIR__ . '/../view/plugins/aboutus-slider.phtml',
-            'MelisDemoCmsTwig/plugin/search-results' => __DIR__ . '/../view/plugins/search-results.phtml',
+//            'MelisDemoCmsTwig/plugin/search-results' => __DIR__ . '/../view/plugins/search-results.phtml',
             'MelisDemoCmsTwig/plugin/gdpr-banner' => __DIR__ . '/../view/plugins/gdpr-banner.phtml',
         ],
         'template_path_stack' => [
