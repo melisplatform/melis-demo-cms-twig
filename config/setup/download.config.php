@@ -579,7 +579,7 @@ return [
                                                 ]
                                             ]
                                         ],
-                                        Site::THEN => [Site::TRIGGER_EVENT => ['event_name' => 'melis_marketplace_site_update_page_404', 'params' => ['siteId' => Melis::CMS_SITE_ID, 'pageId' => Melis::CURRENT_PAGE_ID]]],
+                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID, Site::TRIGGER_EVENT => ['event_name' => 'melis_marketplace_site_update_page_404', 'params' => ['siteId' => Melis::CMS_SITE_ID, 'pageId' => Melis::CURRENT_PAGE_ID]]],
                                     ],
                                     // </Page404>
                                 ]
