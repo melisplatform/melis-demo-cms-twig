@@ -16,7 +16,7 @@ return [
                     // Testimonial parent id
                     'testimonial_id' => '%testimonial%',
                     // Homepage header slider
-                    'homepage_header_slider' => 1,
+                    'homepage_header_slider' => '%homepage_slider_id%',
                     // Aboutus slider
                     'aboutus_slider' => '%about_us_slider%',
                     // Search results page
