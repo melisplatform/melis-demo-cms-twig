@@ -156,6 +156,61 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
         $message = $this->getTool()->getTranslation('tr_install_setup_message_ok');
         $errors = [];
 
+        $this->saveCmsSiteDomain();
+
         return new JsonModel(get_defined_vars());
+    }
+
+    /**
+     * @return \Zend\View\Model\JsonModel
+     */
+    private function saveCmsSiteDomain()
+    {
+        $request = $this->getRequest();
+        $uri     = $request->getUri();
+        $scheme  = $uri->getScheme();
+        $siteDomain = $uri->getHost();
+
+        $container = new \Zend\Session\Container('melisinstaller');
+
+        // default platform
+        $environments       = $container['environments'];
+        $defaultEnvironment = $environments['default_environment'];
+        $siteCtr            = 1;
+
+        if($defaultEnvironment) {
+
+            /**
+             * For multiple environment
+             */
+            $defaultPlatformData[$siteCtr-1] = array(
+                'sdom_site_id' => $siteCtr,
+                'sdom_env'     => getenv('MELIS_PLATFORM'),
+                'sdom_scheme'  => $scheme,
+                'sdom_domain'  => $siteDomain
+            );
+
+            $platforms     = isset($environments['new']) ? $environments['new'] : null;
+            $platformsData = array();
+
+            if($platforms) {
+                foreach($platforms as $platform) {
+                    $platformsData[] = array(
+                        'sdom_site_id' => $siteCtr,
+                        'sdom_env'     => $platform[0]['sdom_env'],
+                        'sdom_scheme'  => $platform[0]['sdom_scheme'],
+                        'sdom_domain'  => $platform[0]['sdom_domain']
+                    );
+                }
+            }
+
+            $platformsData = array_merge($defaultPlatformData, $platformsData);
+
+            $siteDomainTable = $this->getServiceLocator()->get('MelisEngineTableSiteDomain');
+
+            foreach($platformsData as $data) {
+                $siteDomainTable->save($data);
+            }
+        }
     }
 }
