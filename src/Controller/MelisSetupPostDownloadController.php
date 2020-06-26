@@ -206,7 +206,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
 
             $platformsData = array_merge($defaultPlatformData, $platformsData);
 
-            $siteDomainTable = $this->getServiceLocator()->get('MelisEngineTableSiteDomain');
+            $siteDomainTable = $this->getServiceManager()->get('MelisEngineTableSiteDomain');
 
             foreach($platformsData as $data) {
                 $siteDomainTable->save($data);
