@@ -110,19 +110,13 @@ return [
         ],
     ],
     'service_manager' => [
-        'abstract_factories' => [
-            \Laminas\Cache\Service\StorageCacheAbstractServiceFactory::class,
-        ],
         'aliases' => [
-            'translator' => 'MvcTranslator',
+            // Table
             'MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\MelisPlatformTable::class,
-
+            // Services
             'DemoCmsTwigService' => \MelisDemoCmsTwig\Service\DemoCmsTwigService::class,
             'SetupDemoCmsTwigService' => MelisDemoCmsTwig\Service\SetupDemoCmsTwigService::class,
         ],
-    ],
-    'translator' => [
-
     ],
     'controllers' => [
         'invokables' => [
@@ -142,8 +136,6 @@ return [
         ],
     ],
     'view_manager' => [
-        'display_not_found_reason' => true,
-        'display_exceptions' => true,
         'doctype' => 'HTML5',
         'not_found_template' => 'error/404',
         'exception_template' => 'error/index',
