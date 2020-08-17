@@ -14,12 +14,12 @@ class NewsController extends BaseController
     /**
      * This method will render the list of news
      *
-     * @return \Zend\View\Model\ViewModel
+     * @return \Laminas\View\Model\ViewModel
      */
     public function listAction()
     {
         /** Listing News using MelisCmsNewsListNewsPlugin */
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
         $listNewsParameters = [
             'template_path' => 'MelisDemoCmsTwig/plugin/news-list',
             'pageId' => $this->idPage,
@@ -45,11 +45,11 @@ class NewsController extends BaseController
     /**
      * This method will render the Details of a single News
      *
-     * @return \Zend\View\Model\ViewModel
+     * @return \Laminas\View\Model\ViewModel
      */
     public function detailsAction()
     {
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         $newsDetails = [
             'id' => 'newsDetails',

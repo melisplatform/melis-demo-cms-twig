@@ -10,26 +10,24 @@
 namespace MelisDemoCmsTwig\Listener;
 
 use MelisFront\Service\MelisSiteConfigService;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
-use Zend\View\Model\ViewModel;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
+use Laminas\View\Model\ViewModel;
 
 class SiteMenuCustomizationListener implements ListenerAggregateInterface
 {
     private $serviceLocator;
 
-    public function attach(EventManagerInterface $events)
+    public function attach(EventManagerInterface $events, $priority = 1)
     {
         $sharedEvents = $events->getSharedManager();
 
         $callBackHandler = $sharedEvents->attach(
             '*',
-            array(
-                'MelisFrontMenuPlugin_melistemplating_plugin_end',
-            ),
+            'MelisFrontMenuPlugin_melistemplating_plugin_end',
             function ($e) {
                 // Getting the Service Locator from param target
-                $this->serviceLocator = $e->getTarget()->getServiceLocator();
+                $this->serviceLocator = $e->getTarget()->getServiceManager();
 
                 // Getting the Datas from the Event Parameters
                 $params = $e->getParams();

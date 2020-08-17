@@ -2,8 +2,8 @@
 
 namespace MelisDemoCmsTwig\Form\View\Helper;
 
-use Zend\Form\View\Helper\FormRow;
-use Zend\Form\ElementInterface;
+use Laminas\Form\View\Helper\FormRow;
+use Laminas\Form\ElementInterface;
 
 class DemoSiteFieldRow extends FormRow
 {

@@ -9,12 +9,12 @@
 
 namespace MelisDemoCmsTwig\Service;
 
-use MelisCore\Service\MelisCoreGeneralService;
+use MelisCore\Service\MelisGeneralService;
 
 /**
  * Setup DemoCms Services
  */
-class SetupDemoCmsTwigService extends MelisCoreGeneralService
+class SetupDemoCmsTwigService extends MelisGeneralService
 {
     private $siteId;
     private $mainPageId;
@@ -24,7 +24,7 @@ class SetupDemoCmsTwigService extends MelisCoreGeneralService
 
     public function setup($environmentName = 'development', $sitelabel = null)
     {
-        $tablePlatform = $this->getServiceLocator()->get('MelisPlatformTable');
+        $tablePlatform = $this->getServiceManager()->get('MelisPlatformTable');
         $platform = $tablePlatform->getEntryByField('plf_name', $environmentName)->current();
 
         if ($platform) {
@@ -97,7 +97,7 @@ class SetupDemoCmsTwigService extends MelisCoreGeneralService
      */
     public function setupSite($site, $siteId = null)
     {
-        $siteTbl = $this->getServiceLocator()->get('MelisEngineTableSite');
+        $siteTbl = $this->getServiceManager()->get('MelisEngineTableSite');
         if (is_null($siteId)) {
             /**
              * Set Site main page id to temporary value,
@@ -111,7 +111,7 @@ class SetupDemoCmsTwigService extends MelisCoreGeneralService
 
     public function setupSiteDomain($protocol, $domain)
     {
-        $siteDomainTbl = $this->getServiceLocator()->get('MelisEngineTableSiteDomain');
+        $siteDomainTbl = $this->getServiceManager()->get('MelisEngineTableSiteDomain');
 
         $siteDomainTbl->save(array(
             'sdom_site_id' => $this->siteId,
@@ -127,8 +127,8 @@ class SetupDemoCmsTwigService extends MelisCoreGeneralService
      */
     private function setTemplates($templates)
     {
-        $tplTbl = $this->getServiceLocator()->get('MelisEngineTableTemplate');
-        $platformIdsTbl = $this->getServiceLocator()->get('MelisEngineTablePlatformIds');
+        $tplTbl = $this->getServiceManager()->get('MelisEngineTableTemplate');
+        $platformIdsTbl = $this->getServiceManager()->get('MelisEngineTablePlatformIds');
 
         foreach ($templates As $tpl) {
             $platformIds = $platformIdsTbl->getEntryById($this->curPlatformId)->current();
@@ -153,12 +153,12 @@ class SetupDemoCmsTwigService extends MelisCoreGeneralService
      */
     private function setupPages($pages, $fatherId = -1)
     {
-        $pageTreeTbl = $this->getServiceLocator()->get('MelisEngineTablePageTree');
-        $pageLangTbl = $this->getServiceLocator()->get('MelisEngineTablePageLang');
-        $pageSavedTbl = $this->getServiceLocator()->get('MelisEngineTablePageSaved');
-        $pagePublishedTbl = $this->getServiceLocator()->get('MelisEngineTablePagePublished');
-        $platformIdsTbl = $this->getServiceLocator()->get('MelisEngineTablePlatformIds');
-        $melisTablePageSeo = $this->getServiceLocator()->get('MelisEngineTablePageSeo');
+        $pageTreeTbl = $this->getServiceManager()->get('MelisEngineTablePageTree');
+        $pageLangTbl = $this->getServiceManager()->get('MelisEngineTablePageLang');
+        $pageSavedTbl = $this->getServiceManager()->get('MelisEngineTablePageSaved');
+        $pagePublishedTbl = $this->getServiceManager()->get('MelisEngineTablePagePublished');
+        $platformIdsTbl = $this->getServiceManager()->get('MelisEngineTablePlatformIds');
+        $melisTablePageSeo = $this->getServiceManager()->get('MelisEngineTablePageSeo');
 
         // Getting the DemoSite config
         $melisSite = $_SERVER['DOCUMENT_ROOT'] . '/../module/MelisSites';
@@ -236,8 +236,8 @@ class SetupDemoCmsTwigService extends MelisCoreGeneralService
      */
     private function setupSliders($sliders)
     {
-        $sliderTbl = $this->getServiceLocator()->get('MelisCmsSliderTable');
-        $sliderDetailsTbl = $this->getServiceLocator()->get('MelisCmsSliderDetailTable');
+        $sliderTbl = $this->getServiceManager()->get('MelisCmsSliderTable');
+        $sliderDetailsTbl = $this->getServiceManager()->get('MelisCmsSliderDetailTable');
 
         foreach ($sliders As $slider) {
             $slider['columns']['mcslide_date'] = date('Y-m-d H:i:s');
@@ -264,8 +264,8 @@ class SetupDemoCmsTwigService extends MelisCoreGeneralService
      */
     private function setupNews($news, $newsText)
     {
-        $newsTbl = $this->getServiceLocator()->get('MelisCmsNewsTable');
-        $newsTblTxt = $this->getServiceLocator()->get('MelisCmsNewsTextsTable');
+        $newsTbl = $this->getServiceManager()->get('MelisCmsNewsTable');
+        $newsTblTxt = $this->getServiceManager()->get('MelisCmsNewsTextsTable');
 
         $ctr = 0;
         $monthCtr = 0;
@@ -293,9 +293,9 @@ class SetupDemoCmsTwigService extends MelisCoreGeneralService
      */
     private function setupProspectsThemes($items)
     {
-        $themeTbl = $this->getServiceLocator()->get('MelisCmsProspectsThemeTable');
-        $themeItemTbl = $this->getServiceLocator()->get('MelisCmsProspectsThemeItemTable');
-        $themeItemTransTbl = $this->getServiceLocator()->get('MelisCmsProspectsThemeItemTransTable');
+        $themeTbl = $this->getServiceManager()->get('MelisCmsProspectsThemeTable');
+        $themeItemTbl = $this->getServiceManager()->get('MelisCmsProspectsThemeItemTable');
+        $themeItemTransTbl = $this->getServiceManager()->get('MelisCmsProspectsThemeItemTransTable');
 
         foreach ($items As $val) {
             $themItems = $val['pros_theme_items_trans'];

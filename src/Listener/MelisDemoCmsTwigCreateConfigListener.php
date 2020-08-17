@@ -9,21 +9,22 @@
 
 namespace MelisDemoCmsTwig\Listener;
 
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 
 class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
 {
     protected $map = [];
 
-    public function attach(EventManagerInterface $events)
+    public function attach(EventManagerInterface $events, $priority = 1)
     {
         $sharedEvents = $events->getSharedManager();
 
         $callBackHandler = $sharedEvents->attach(
-            '*', 'melis_marketplace_site_install_results',
+            '*',
+            'melis_marketplace_site_install_results',
             function ($e) {
-                $sm = $e->getTarget()->getServiceLocator();
+                $sm = $e->getTarget()->getServiceManager();
 
                 $pages = $this->createMap((array)$e->getParams()['pages']);
                 /** @var \MelisAssetManager\Service\MelisModulesService $moduleService */
@@ -45,7 +46,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                         '\'%news_page_id%\'',
                         '\'%news_details_id%\'',
                         '\'%testimonial%\'',
-                        '\'%search_results_page_id%\''
+//                        '\'%search_results_page_id%\''
                     ],
                     [
                         $siteId,
@@ -53,7 +54,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                         $pages['News'],
                         $pages['News Details'],
                         $pages['Testimonials'],
-                        $pages['Search results']
+//                        $pages['Search results']
                     ],
                     $melisDemoConfig
                 );
@@ -76,7 +77,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                 if (!empty($param['table_name'])) {
                     if ($param['table_name'] == 'melis_cms_slider') {
 
-                        $sm = $e->getTarget()->getServiceLocator();
+                        $sm = $e->getTarget()->getServiceManager();
                         $moduleService = $sm->get('MelisAssetManagerModulesService');
                         $path = $moduleService->getModulePath('MelisDemoCmsTwig');
 
@@ -102,7 +103,7 @@ class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
                 $params = $e->getParams();
 
                 /** @var \MelisEngine\Model\Tables\MelisSite404Table $site404 */
-                $sm = $e->getTarget()->getServiceLocator();
+                $sm = $e->getTarget()->getServiceManager();
                 $site404 = $sm->get('MelisEngineTableSite404');
 
                 $site = $site404->getEntryByField('s404_site_id', $params['params']['siteId'])->current();

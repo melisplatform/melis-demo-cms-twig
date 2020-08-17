@@ -1,10 +1,10 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * Laminas Framework (http://framework.Laminas.com/)
  *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @link      http://github.com/Laminasframework/LaminasSkeletonApplication for the canonical source repository
+ * @copyright Copyright (c) 2005-2015 Laminas Technologies USA Inc. (http://www.Laminas.com)
+ * @license   http://framework.Laminas.com/license/new-bsd New BSD License
  */
 
 return [
@@ -110,30 +110,20 @@ return [
         ],
     ],
     'service_manager' => [
-        'abstract_factories' => [
-            \Zend\Cache\Service\StorageCacheAbstractServiceFactory::class,
-            \Zend\Log\LoggerAbstractServiceFactory::class,
-        ],
         'aliases' => [
-            'translator' => 'MvcTranslator',
+            // Table
             'MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\MelisPlatformTable::class,
+            // Services
+            'DemoCmsTwigService' => \MelisDemoCmsTwig\Service\DemoCmsTwigService::class,
+            'SetupDemoCmsTwigService' => MelisDemoCmsTwig\Service\SetupDemoCmsTwigService::class,
         ],
-        'factories' => [
-            'DemoCmsTwigService' => \MelisDemoCmsTwig\Service\Factory\DemoCmsTwigServiceFactory::class,
-            'SetupDemoCmsTwigService' => MelisDemoCmsTwig\Service\Factory\SetupDemoCmsTwigServiceFactory::class,
-
-            'MelisDemoCmsTwig\Model\Tables\MelisPlatformTable' => \MelisDemoCmsTwig\Model\Tables\Factory\MelisPlatformTableFactory::class,
-        ],
-    ],
-    'translator' => [
-
     ],
     'controllers' => [
         'invokables' => [
             'MelisDemoCmsTwig\Controller\Base' => \MelisDemoCmsTwig\Controller\BaseController::class,
             'MelisDemoCmsTwig\Controller\Home' => \MelisDemoCmsTwig\Controller\HomeController::class,
             'MelisDemoCmsTwig\Controller\News' => \MelisDemoCmsTwig\Controller\NewsController::class,
-            'MelisDemoCmsTwig\Controller\Search' => \MelisDemoCmsTwig\Controller\SearchController::class,
+//            'MelisDemoCmsTwig\Controller\Search' => \MelisDemoCmsTwig\Controller\SearchController::class,
             'MelisDemoCmsTwig\Controller\Testimonial' => \MelisDemoCmsTwig\Controller\TestimonialController::class,
             'MelisDemoCmsTwig\Controller\Page404' => \MelisDemoCmsTwig\Controller\Page404Controller::class,
             'MelisDemoCmsTwig\Controller\MelisSetupPostDownload' => \MelisDemoCmsTwig\Controller\MelisSetupPostDownloadController::class,
@@ -146,8 +136,6 @@ return [
         ],
     ],
     'view_manager' => [
-        'display_not_found_reason' => true,
-        'display_exceptions' => true,
         'doctype' => 'HTML5',
         'not_found_template' => 'error/404',
         'exception_template' => 'error/index',
@@ -155,7 +143,7 @@ return [
             'MelisDemoCmsTwig' => true,
         ],
         'template_map' => [
-            // Zend default layout
+            // Laminas default layout
             'layout/layout' => __DIR__ . '/../view/layout/defaultTwigLayout.twig',
             // Main layout
             'MelisDemoCmsTwig/defaultLayout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
@@ -175,7 +163,7 @@ return [
             'MelisDemoCmsTwig/plugin/list-paginator' => __DIR__ . '/../view/plugins/list-paginator.phtml',
             'MelisDemoCmsTwig/plugin/news-details' => __DIR__ . '/../view/plugins/news-details.phtml',
             'MelisDemoCmsTwig/plugin/aboutus-slider' => __DIR__ . '/../view/plugins/aboutus-slider.phtml',
-            'MelisDemoCmsTwig/plugin/search-results' => __DIR__ . '/../view/plugins/search-results.phtml',
+//            'MelisDemoCmsTwig/plugin/search-results' => __DIR__ . '/../view/plugins/search-results.phtml',
             'MelisDemoCmsTwig/plugin/gdpr-banner' => __DIR__ . '/../view/plugins/gdpr-banner.phtml',
         ],
         'template_path_stack' => [

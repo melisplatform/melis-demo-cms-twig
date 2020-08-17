@@ -18,9 +18,9 @@ return [
                     // Homepage header slider
                     'homepage_header_slider' => '%homepage_slider_id%',
                     // Aboutus slider
-                    'aboutus_slider' => '%about_us_slider%',
+//                    'aboutus_slider' => '%about_us_slider%',
                     // Search results page
-                    'search_result_page_id' => '%search_results_page_id%',
+//                    'search_result_page_id' => '%search_results_page_id%',
                 ],
             ],
             'allSites' => [

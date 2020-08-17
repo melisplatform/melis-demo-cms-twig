@@ -23,11 +23,11 @@ return [
                         ],
                     ],
                 ],
-                'MelisFrontSearchResultsPlugin' => [
-                    'front' => [
-                        'template_path' => ['MelisDemoCmsTwig/plugin/search-results'],
-                    ],
-                ],
+//                'MelisFrontSearchResultsPlugin' => [
+//                    'front' => [
+//                        'template_path' => ['MelisDemoCmsTwig/plugin/search-results'],
+//                    ],
+//                ],
 
                 'MelisFrontGdprBannerPlugin' => [
                     'front' => [

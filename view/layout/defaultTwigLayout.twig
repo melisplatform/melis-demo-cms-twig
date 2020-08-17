@@ -1,4 +1,4 @@
-{{ docType() }}
+{#{{ docType() }}#}
 <html class="no-js" lang="en">
 
     <head>
@@ -69,26 +69,27 @@
                                 <!-- End of Site Menu -->
                                 </div>
                                 <!-- Header Search Menu -->
-                                <div class="col-md-2 hidden-sm hidden-xs">
-                                    <div class="search-box global-table">
-                                        <div class="global-row">
-                                            <div class="global-cell">
-                                                <form action="{{ MelisLink(SiteConfig('search_result_page_id'), false) }}" method="get">
-                                                    <div class="input-box">
-                                                        <input class="single-input" placeholder="Search" type="text" name=keyword value="{{ layout().search }}" required>
-                                                        <button class="src-btn"><i class="fa fa-search"></i></button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+{#                                <div class="col-md-2 hidden-sm hidden-xs">#}
+{#                                    <div class="search-box global-table">#}
+{#                                        <div class="global-row">#}
+{#                                            <div class="global-cell">#}
+{#                                                <form action="{{ MelisLink(SiteConfig('search_result_page_id'), false) }}" method="get">#}
+{#                                                    <div class="input-box">#}
+{#                                                        <input class="single-input" placeholder="Search" type="text" name=keyword value="{{ layout().search }}" required>#}
+{#                                                        <button class="src-btn"><i class="fa fa-search"></i></button>#}
+{#                                                    </div>#}
+{#                                                </form>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
                                 <!-- End of Header Search Menu -->
                                 
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="clearfix"></div>
             </header>
 
             <!-- Content area start -->

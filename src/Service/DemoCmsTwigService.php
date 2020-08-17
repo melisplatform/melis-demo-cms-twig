@@ -9,12 +9,12 @@
 
 namespace MelisDemoCmsTwig\Service;
 
-use MelisCore\Service\MelisCoreGeneralService;
+use MelisCore\Service\MelisGeneralService;
 
 /**
  * MelisDemoCmsTwig Services
  */
-class DemoCmsTwigService extends MelisCoreGeneralService
+class DemoCmsTwigService extends MelisGeneralService
 {
     /**
      * This method will customize the Site menu
@@ -84,7 +84,7 @@ class DemoCmsTwigService extends MelisCoreGeneralService
         /**
          * get the site config service
          */
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         // Getting the Page Id where the News Details will render
         $newsDetailsIdPage = $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $newsId);
@@ -109,11 +109,11 @@ class DemoCmsTwigService extends MelisCoreGeneralService
          *          'year' => 2016,
          *      ),
          */
-        $newsTable = $this->serviceLocator->get('MelisCmsNewsTable');
+        $newsTable = $this->getServiceManager()->get('MelisCmsNewsTable');
         $newsList = $newsTable->getNewsListByMonths(4, $siteConfigSrv->getSiteConfigByKey('site_id', $newsId))->toArray();
 
         // Page Tree service to generate Page Link
-        $melisTree = $this->serviceLocator->get('MelisEngineTree');
+        $melisTree = $this->getServiceManager()->get('MelisEngineTree');
 
         $newsListMenu = array();
         foreach ($newsList As $key => $val) {
@@ -182,13 +182,13 @@ class DemoCmsTwigService extends MelisCoreGeneralService
         /**
          * get the site config service
          */
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
         $newsIdPage = $siteConfigSrv->getSiteConfigByKey('news_menu_page_id');
 
         /**
          * Retreiving the the list of News group by months and year
          */
-        $newsTable = $this->serviceLocator->get('MelisCmsNewsTable');
+        $newsTable = $this->getServiceManager()->get('MelisCmsNewsTable');
         $newsList = $newsTable->getNewsListByMonths(null, $siteConfigSrv->getSiteConfigByKey('site_id'));
 
         $list = array();
