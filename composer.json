@@ -44,7 +44,7 @@
 		"melisplatform/melis-cms": "^4.0",
 		"melisplatform/melis-cms-slider": "^4.0",
 		"melisplatform/melis-cms-news": "^4.0",
-		"melisplatform/melis-cms-twig": "dev-update/php-8-upgrade as 4.1"
+		"melisplatform/melis-cms-twig": "^4.0"
 	},
 	"suggest": {
 		"melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
