@@ -171,7 +171,7 @@ class MelisSetupPostDownloadController extends MelisAbstractActionController imp
         $scheme  = $uri->getScheme();
         $siteDomain = $uri->getHost();
 
-        $container = new \Zend\Session\Container('melisinstaller');
+        $container = new \Laminas\Session\Container('melisinstaller');
 
         // default platform
         $environments       = $container['environments'];
