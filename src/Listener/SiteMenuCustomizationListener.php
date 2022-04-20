@@ -34,7 +34,7 @@ class SiteMenuCustomizationListener implements ListenerAggregateInterface
                 $viewVariables = $params['view']->getVariables();
 
                 if ($params['view']->getTemplate() == 'MelisDemoCmsTwig/plugin/menu' && !empty($viewVariables['menu'])) {
-                    $frontConfig = $params['pluginFronConfig'];
+                    $frontConfig = $params['pluginFrontConfig'];
                     $pageId = $frontConfig['pageId'];
 
                     /** @var MelisSiteConfigService $siteConfigSrv */
