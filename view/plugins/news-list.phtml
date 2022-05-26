@@ -48,8 +48,10 @@
         ?>	
             <div class="total-blog">
            		<?php 
-           		   foreach ($this->listNews As $key => $val)
-           		   {
+           		   foreach ($this->listNews As $key => $val) {
+                        //retrieve the first paragraph based on the ordering
+                        $paragraphOrder = !empty($val['cnews_paragraph_order']) ? explode('-', $val['cnews_paragraph_order']) : null;
+                        $firstParagraph = !empty($paragraphOrder) ? $val[$paragraphOrder[0]] : $val['cnews_paragraph1'];
            		?>
                     <div class="col-md-4">
                        	<div class="single-blog">
@@ -77,7 +79,7 @@
                                        	</ul>
                                    	</div>
                                    	<div class="blog-text">
-                                       	<p><?= $val['cnews_paragraph1']; ?></p>
+                                       	<p><?=$firstParagraph; ?></p>
                                    	</div>
                                    	<a class="read-more montserrat" href="<?= $val['newsLink']; ?>">Read More</a>
                                	</div>
