@@ -162,7 +162,7 @@ class MelisSetupPostDownloadController extends MelisAbstractActionController imp
     }
 
     /**
-     * @return \Zend\View\Model\JsonModel
+     * @return \Laminas\View\Model\JsonModel
      */
     private function saveCmsSiteDomain()
     {
@@ -171,11 +171,11 @@ class MelisSetupPostDownloadController extends MelisAbstractActionController imp
         $scheme  = $uri->getScheme();
         $siteDomain = $uri->getHost();
 
-        $container = new \Zend\Session\Container('melisinstaller');
+        $container = new \Laminas\Session\Container('melisinstaller');
 
         // default platform
         $environments       = $container['environments'];
-        $defaultEnvironment = $environments['default_environment'];
+        $defaultEnvironment = !empty($environments) ? $environments['default_environment'] : null;
         $siteCtr            = 1;
 
         if($defaultEnvironment) {
