@@ -15,6 +15,7 @@ use Laminas\EventManager\ListenerAggregateInterface;
 class MelisDemoCmsTwigCreateConfigListener implements ListenerAggregateInterface
 {
     protected $map = [];
+    public $listeners = [];
 
     public function attach(EventManagerInterface $events, $priority = 1)
     {
