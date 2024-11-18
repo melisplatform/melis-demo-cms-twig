@@ -144,9 +144,8 @@ Version: 1.0
     /*----------------------------
      fancybox active
     ------------------------------ */
-    $(document).ready(function() {
-        $('.fancybox').fancybox();
-    });
+    // $('.fancybox').fancybox();
+    Fancybox.fromSelector('.fancybox');
 
     
     /*************************
@@ -225,7 +224,7 @@ Version: 1.0
 	});
 })(jQuery);
 
-$(window).scroll(function() {
+$(window).on("scroll", function() {
 	if ($(this).scrollTop() > 1){ 
 		$('#sticky-header').addClass("sticky");
 	  }

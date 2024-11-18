@@ -15,7 +15,8 @@ return [
         '/melis-demo-cms-twig/public/css/skin/skin-default.css',
     ],
     'js' => [
-        '/melis-demo-cms-twig/public/js/vendor/jquery-2.2.4.min.js',
+        '/melis-demo-cms-twig/public/js/vendor/jquery-3.7.1.min.js',
+        '/melis-demo-cms-twig/public/js/vendor/jquery-migrate.min.js',
         '/melis-demo-cms-twig/public/js/bootstrap.min.js',
         '/melis-demo-cms-twig/public/js/owl.carousel.js',
         '/melis-demo-cms-twig/public/js/jquery.countdown.min.js',

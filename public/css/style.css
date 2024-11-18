@@ -2628,3 +2628,21 @@ p.error {
 .dark-theme.banner-single a.btn-def:hover {
     border-color: #cc3333;
 }
+
+/* jQuery migration */
+body a {
+    text-decoration: none;
+}
+.owl-carousel.dot-line .owl-dots .owl-dot {
+    background-color: transparent;
+    margin: 0;
+    border: 0;
+    color: transparent;
+    outline: 0;
+}
+.owl-carousel .owl-nav .owl-prev, 
+.owl-carousel .owl-nav .owl-next, .owl-carousel .owl-dot,
+.owl-dots .owl-dot {
+    border: 0;
+    background-color: transparent;
+}
