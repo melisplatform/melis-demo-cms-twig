@@ -1,0 +1,17 @@
+{% extends baseTemplate %}
+
+{# Melis Demo CMS Twig "Home" template, mimics the "Home" template of Melis Demo Cms #}
+{% block content %}
+    <div class="drag-and-drop-page">
+        <div class="full-width row">
+            <div class="col-xs-12">
+                {{ MelisDragDropZone(idPage, "dragdropzone_1") }}
+            </div>
+        </div>
+        <div class="full-width row">
+            <div class="col-xs-12">
+                {{ MelisDragDropZone(idPage, "dragdropzone_2") }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

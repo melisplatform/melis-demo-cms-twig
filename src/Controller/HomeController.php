@@ -67,4 +67,13 @@ class HomeController extends BaseController
 
         return $this->view;
     }
+
+    public function dragAndDropAction()
+    {
+        $this->view->setVariable('idPage', $this->idPage);
+        $this->view->setVariable('renderType', $this->renderType);
+        $this->view->setVariable('renderMode', $this->renderMode);
+
+        return $this->view;
+    }
 }
